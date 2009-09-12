@@ -1,0 +1,6 @@
+syntax: glob
+*.orig
+*~
+.DS_Store
+*.bak
+
