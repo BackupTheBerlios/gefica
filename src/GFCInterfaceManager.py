@@ -14,6 +14,7 @@ class GFCInterfaceManager:
 		self.gladefile = gladefile
 		self.gladeTrees = {
 			"theAboutDialog" : gtk.glade.XML(self.gladefile, "theAboutDialog"),
+			"popupMessageDialog" : gtk.glade.XML(self.gladefile, "popupMessageDialog"),
 			"openFileChooserDialog" : gtk.glade.XML(self.gladefile, "openFileChooserDialog"),
 			"saveFileChooserDialog" : gtk.glade.XML(self.gladefile, "saveFileChooserDialog"),
 			"mainWindow" : gtk.glade.XML(self.gladefile, "mainWindow")
@@ -139,7 +140,9 @@ class GFCInterfaceManager:
 
 	#---
 	def new_card_cb(self, item):
-		pass
+		index = self.cards_manager.add_card()
+		self.__getitem__("goComboBox").append_text(self.cards_manager.get_card_character(index))
+		self.update_interface(index)
 
 	def edit_card_cb(self, item):
 		""" """
@@ -189,11 +192,15 @@ class GFCInterfaceManager:
 		""" """
 		self.cards_manager.generate_svg(self.data_path)
 		self.cards_manager.generate_pdf(self.data_path)
+		self.__getitem__("popupMessageDialog").format_secondary_text("Les fiches ont été générées à l'emplacement suivant :\n"+self.data_path)
+		response = self.__getitem__("popupMessageDialog").run()
+		self.__getitem__("popupMessageDialog").hide()
 
 	#---
 	def show_about_dialog_cb(self, item):
 		""" """
-		self.__getitem__("theAboutDialog").show()
+		response = self.__getitem__("theAboutDialog").run()
+		self.__getitem__("theAboutDialog").hide()
 
 	#---
 	def go_to_previous_cb(self, item):

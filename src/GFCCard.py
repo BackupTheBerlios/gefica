@@ -7,11 +7,11 @@ class GFCCard:
 	def __init__(self, cardindex):
 		""" """
 		self.index = cardindex
-		self.character = ""
-		self.pinyin = ""
-		self.translation = ""
-		self.example = ""
-		self.example_translation = ""
+		self.character = "Ø"
+		self.pinyin = "ø"
+		self.translation = "ø"
+		self.example = "ø"
+		self.example_translation = "ø"
 		pass
 
 	def PrintSelf(self):

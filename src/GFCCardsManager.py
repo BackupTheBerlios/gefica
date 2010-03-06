@@ -65,6 +65,11 @@ class GFCCardsManager:
 		self.nbCards+=1
 		return c
 
+	def add_card(self):
+		""" """
+		self.create_card()
+		return self.nbCards -1
+
 	def read_cards_from_file(self, cf):
 		""" """
 		cards_reader = ConfigParser.SafeConfigParser()

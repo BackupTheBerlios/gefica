@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--*- mode: xml -*-->
+<?xml version="1.0"?>
 <glade-interface>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy toplevel-contextual -->
   <widget class="GtkFileChooserDialog" id="openFileChooserDialog">
     <property name="destroy_with_parent">True</property>
-    <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+    <property name="type_hint">dialog</property>
     <signal name="selection_changed" handler="on_openFileChooserDialog_selection_changed"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog-vbox2">
@@ -13,35 +13,45 @@
         <child internal-child="action_area">
           <widget class="GtkHButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
-            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <property name="layout_style">end</property>
             <child>
               <widget class="GtkButton" id="button1">
+                <property name="label">gtk-cancel</property>
+                <property name="response_id">-6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
-                <property name="label">gtk-cancel</property>
+                <property name="receives_default">False</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">-6</property>
               </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
               <widget class="GtkButton" id="button2">
+                <property name="label">gtk-open</property>
+                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="has_default">True</property>
-                <property name="label">gtk-open</property>
+                <property name="receives_default">False</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">-5</property>
               </widget>
               <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
             </child>
           </widget>
           <packing>
             <property name="expand">False</property>
-            <property name="pack_type">GTK_PACK_END</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
           </packing>
         </child>
       </widget>
@@ -49,8 +59,8 @@
   </widget>
   <widget class="GtkFileChooserDialog" id="saveFileChooserDialog">
     <property name="destroy_with_parent">True</property>
-    <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
-    <property name="action">GTK_FILE_CHOOSER_ACTION_SAVE</property>
+    <property name="type_hint">dialog</property>
+    <property name="action">save</property>
     <signal name="selection_changed" handler="on_saveFileChooserDialog_selection_changed"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog-vbox3">
@@ -59,60 +69,71 @@
         <child internal-child="action_area">
           <widget class="GtkHButtonBox" id="dialog-action_area3">
             <property name="visible">True</property>
-            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <property name="layout_style">end</property>
             <child>
               <widget class="GtkButton" id="button3">
+                <property name="label">gtk-cancel</property>
+                <property name="response_id">-6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
-                <property name="label">gtk-cancel</property>
+                <property name="receives_default">False</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">-6</property>
               </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
               <widget class="GtkButton" id="button4">
+                <property name="label">gtk-open</property>
+                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="has_default">True</property>
-                <property name="label">gtk-open</property>
+                <property name="receives_default">False</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">-5</property>
               </widget>
               <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
             </child>
           </widget>
           <packing>
             <property name="expand">False</property>
-            <property name="pack_type">GTK_PACK_END</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
           </packing>
         </child>
       </widget>
     </child>
   </widget>
   <widget class="GtkWindow" id="mainWindow">
-    <property name="title" translatable="yes">Prévisualisation...</property>
+    <property name="title" translatable="yes">GeFiCa</property>
     <child>
       <widget class="GtkVBox" id="mainVBox">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <child>
           <widget class="GtkMenuBar" id="mainMenuBar">
             <property name="visible">True</property>
             <child>
-              <widget class="GtkMenuItem" id="fileMenuItem">
+              <widget class="GtkMenuItem" id="projectMenuItem">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">_Fichier</property>
+                <property name="label" translatable="yes">_Projet</property>
                 <property name="use_underline">True</property>
                 <child>
                   <widget class="GtkMenu" id="fileMenu">
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="newImageMenuItem">
+                        <property name="label">gtk-new</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-new</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="newImageMenuItem_activate_cb"/>
@@ -120,8 +141,8 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="openImageMenuItem">
+                        <property name="label">gtk-open</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-open</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="openImageMenuItem_activate_cb"/>
@@ -129,8 +150,8 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="saveImageMenuItem">
+                        <property name="label">gtk-save</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-save</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="saveImageMenuItem_activate_cb"/>
@@ -138,8 +159,8 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="saveasImageMenuItem">
+                        <property name="label">gtk-save-as</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-save-as</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="saveasImageMenuItem_activate_cb"/>
@@ -152,8 +173,8 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="quitImageMenuItem">
+                        <property name="label">gtk-quit</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-quit</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="quitImageMenuItem_activate_cb"/>
@@ -166,15 +187,15 @@
             <child>
               <widget class="GtkMenuItem" id="editMenuItem">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">É_dition</property>
+                <property name="label" translatable="yes">&#xC9;_dition</property>
                 <property name="use_underline">True</property>
                 <child>
                   <widget class="GtkMenu" id="editMenu">
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="cutImageMenuItem">
+                        <property name="label">gtk-cut</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-cut</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="cutImageMenuItem_activate_cb"/>
@@ -182,8 +203,8 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="copyImageMenuItem">
+                        <property name="label">gtk-copy</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-copy</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="copyImageMenuItem_activate_cb"/>
@@ -191,8 +212,8 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="pasteImageMenuItem">
+                        <property name="label">gtk-paste</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-paste</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="pasteImageMenuItem_activate_cb"/>
@@ -200,8 +221,8 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="deleteImageMenuItem">
+                        <property name="label">gtk-delete</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-delete</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="deleteImageMenuItem_activate_cb"/>
@@ -221,12 +242,18 @@
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="newcardImageMenuItem">
+                        <property name="label" translatable="yes">_Nouvelle fiche</property>
                         <property name="visible">True</property>
-                        <property name="tooltip" translatable="yes">Crée et ajoute une nouvelle fiche à la liste.</property>
-                        <property name="label" translatable="yes">gtk-new</property>
+                        <property name="tooltip" translatable="yes">Cr&#xE9;e et ajoute une nouvelle fiche &#xE0; la liste.</property>
                         <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
+                        <property name="use_stock">False</property>
                         <signal name="activate" handler="newcardImageMenuItem_activate_cb"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image1">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-new</property>
+                          </widget>
+                        </child>
                       </widget>
                     </child>
                     <child>
@@ -236,9 +263,9 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="editcardImageMenuItem">
+                        <property name="label">gtk-edit</property>
                         <property name="visible">True</property>
-                        <property name="tooltip" translatable="yes">Modifie les données de la fiche en cours.</property>
-                        <property name="label" translatable="yes">gtk-edit</property>
+                        <property name="tooltip" translatable="yes">Modifie les donn&#xE9;es de la fiche en cours.</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="editcardImageMenuItem_activate_cb"/>
@@ -246,10 +273,10 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="applycardImageMenuItem">
+                        <property name="label">gtk-apply</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
-                        <property name="tooltip" translatable="yes">Valide les modifications apportées à la fiche en cours.</property>
-                        <property name="label" translatable="yes">gtk-apply</property>
+                        <property name="tooltip" translatable="yes">Valide les modifications apport&#xE9;es &#xE0; la fiche en cours.</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                       </widget>
@@ -261,13 +288,16 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="pdfImageMenuItem">
+                        <property name="label" translatable="yes">_Exporter au format PDF</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Exporter au format _PDF</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">False</property>
                         <signal name="activate" handler="pdfImageMenuItem_activate_cb"/>
                         <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image1">
+                          <widget class="GtkImage" id="image2">
+                            <property name="visible">True</property>
                             <property name="stock">gtk-execute</property>
+                            <property name="icon-size">1</property>
                           </widget>
                         </child>
                       </widget>
@@ -286,8 +316,8 @@
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="aboutImageMenuItem">
+                        <property name="label">gtk-about</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-about</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="aboutImageMenuItem_activate_cb"/>
@@ -300,6 +330,7 @@
           </widget>
           <packing>
             <property name="expand">False</property>
+            <property name="position">0</property>
           </packing>
         </child>
         <child>
@@ -308,27 +339,26 @@
             <property name="spacing">1</property>
             <child>
               <widget class="GtkButton" id="newButton">
+                <property name="label">gtk-new</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-new</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">0</property>
               </widget>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="padding">5</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
               <widget class="GtkButton" id="previousButton">
+                <property name="label">gtk-go-back</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-go-back</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">0</property>
                 <signal name="released" handler="previousButton_released_cb"/>
               </widget>
               <packing>
@@ -340,12 +370,11 @@
             </child>
             <child>
               <widget class="GtkButton" id="nextButton">
+                <property name="label">gtk-go-forward</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-go-forward</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">0</property>
                 <signal name="released" handler="nextButton_released_cb"/>
               </widget>
               <packing>
@@ -357,7 +386,7 @@
             <child>
               <widget class="GtkLabel" id="goLabel">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Aller directement au caractère :</property>
+                <property name="label" translatable="yes">Aller directement au caract&#xE8;re :</property>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -403,12 +432,12 @@
                     <property name="row_spacing">2</property>
                     <child>
                       <widget class="GtkButton" id="applyButton">
+                        <property name="label">gtk-apply</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">True</property>
-                        <property name="label" translatable="yes">gtk-apply</property>
+                        <property name="receives_default">False</property>
                         <property name="use_stock">True</property>
-                        <property name="response_id">0</property>
                       </widget>
                       <packing>
                         <property name="left_attach">1</property>
@@ -549,7 +578,7 @@
                     <child>
                       <widget class="GtkLabel" id="characterLabel">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Caractère :</property>
+                        <property name="label" translatable="yes">Caract&#xE8;re :</property>
                       </widget>
                       <packing>
                         <property name="x_options"></property>
@@ -558,12 +587,11 @@
                     </child>
                     <child>
                       <widget class="GtkButton" id="editButton">
+                        <property name="label">gtk-edit</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                        <property name="label" translatable="yes">gtk-edit</property>
                         <property name="use_stock">True</property>
-                        <property name="response_id">0</property>
                       </widget>
                       <packing>
                         <property name="top_attach">5</property>
@@ -590,6 +618,7 @@
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="padding">5</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
@@ -612,7 +641,7 @@
                 <child>
                   <widget class="GtkLabel" id="previewLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">&lt;b&gt;Prévisualisation :&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Pr&#xE9;visualisation :&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </widget>
                   <packing>
@@ -643,19 +672,50 @@
       </widget>
     </child>
   </widget>
+  <widget class="GtkMessageDialog" id="popupMessageDialog">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Information</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="icon_name">dialog-information</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="urgency_hint">True</property>
+    <property name="transient_for">mainWindow</property>
+    <property name="has_separator">False</property>
+    <property name="buttons">close</property>
+    <property name="text" translatable="yes">G&#xE9;n&#xE9;ration PDF termin&#xE9;e.</property>
+    <property name="secondary_text" translatable="yes">Les fichiers g&#xE9;n&#xE9;r&#xE9;s se trouvent &#xE0; l'emplacement suivant :</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox12">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area12">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
   <widget class="GtkAboutDialog" id="theAboutDialog">
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">À propos de GFC</property>
-    <property name="resizable">False</property>
-    <property name="window_position">GTK_WIN_POS_CENTER_ON_PARENT</property>
+    <property name="title" translatable="yes">&#xC0; propos de GeFiCa</property>
+    <property name="window_position">center-on-parent</property>
     <property name="destroy_with_parent">True</property>
-    <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+    <property name="type_hint">normal</property>
     <property name="transient_for">mainWindow</property>
-    <property name="opacity">0.5</property>
+    <property name="has_separator">False</property>
     <property name="program_name">GeFiCa</property>
     <property name="version">0.1</property>
-    <property name="copyright" translatable="yes">©Romain Ballais 2005-2009</property>
-    <property name="comments" translatable="yes">Un logiciel de génération de fiches d'idéogrammes chinois.</property>
+    <property name="copyright" translatable="yes">&#xA9;Romain Ballais 2005-2010</property>
+    <property name="comments" translatable="yes">Un logiciel de g&#xE9;n&#xE9;ration de fiches d'id&#xE9;ogrammes chinois.</property>
     <property name="website">http://gefica.berlios.de/</property>
     <property name="license" translatable="yes">
 CONTRAT DE LICENCE DE LOGICIEL LIBRE CeCILL
@@ -664,155 +724,155 @@ CONTRAT DE LICENCE DE LOGICIEL LIBRE CeCILL
     Avertissement
 
 Ce contrat est une licence de logiciel libre issue d'une concertation
-entre ses auteurs afin que le respect de deux grands principes préside à
-sa rédaction:
+entre ses auteurs afin que le respect de deux grands principes pr&#xE9;side &#xE0;
+sa r&#xE9;daction:
 
     * d'une part, le respect des principes de diffusion des logiciels
-      libres: accès au code source, droits étendus conférés aux
+      libres: acc&#xE8;s au code source, droits &#xE9;tendus conf&#xE9;r&#xE9;s aux
       utilisateurs,
-    * d'autre part, la désignation d'un droit applicable, le droit
-      français, auquel elle est conforme, tant au regard du droit de la
-      responsabilité civile que du droit de la propriété intellectuelle
+    * d'autre part, la d&#xE9;signation d'un droit applicable, le droit
+      fran&#xE7;ais, auquel elle est conforme, tant au regard du droit de la
+      responsabilit&#xE9; civile que du droit de la propri&#xE9;t&#xE9; intellectuelle
       et de la protection qu'il offre aux auteurs et titulaires des
       droits patrimoniaux sur un logiciel.
 
 Les auteurs de la licence CeCILL (pour Ce[a] C[nrs] I[nria] L[ogiciel]
 L[ibre]) sont:
 
-Commissariat à l'Energie Atomique - CEA, établissement public de
-recherche à caractère scientifique, technique et industriel, dont le
-siège est situé 25 rue Leblanc, immeuble Le Ponant D, 75015 Paris.
+Commissariat &#xE0; l'Energie Atomique - CEA, &#xE9;tablissement public de
+recherche &#xE0; caract&#xE8;re scientifique, technique et industriel, dont le
+si&#xE8;ge est situ&#xE9; 25 rue Leblanc, immeuble Le Ponant D, 75015 Paris.
 
-Centre National de la Recherche Scientifique - CNRS, établissement
-public à caractère scientifique et technologique, dont le siège est
-situé 3 rue Michel-Ange, 75794 Paris cedex 16.
+Centre National de la Recherche Scientifique - CNRS, &#xE9;tablissement
+public &#xE0; caract&#xE8;re scientifique et technologique, dont le si&#xE8;ge est
+situ&#xE9; 3 rue Michel-Ange, 75794 Paris cedex 16.
 
 Institut National de Recherche en Informatique et en Automatique -
-INRIA, établissement public à caractère scientifique et technologique,
-dont le siège est situé Domaine de Voluceau, Rocquencourt, BP 105, 78153
+INRIA, &#xE9;tablissement public &#xE0; caract&#xE8;re scientifique et technologique,
+dont le si&#xE8;ge est situ&#xE9; Domaine de Voluceau, Rocquencourt, BP 105, 78153
 Le Chesnay cedex.
 
 
-    Préambule
+    Pr&#xE9;ambule
 
 Ce contrat est une licence de logiciel libre dont l'objectif est de
-conférer aux utilisateurs la liberté de modification et de
-redistribution du logiciel régi par cette licence dans le cadre d'un
-modèle de diffusion en logiciel libre.
+conf&#xE9;rer aux utilisateurs la libert&#xE9; de modification et de
+redistribution du logiciel r&#xE9;gi par cette licence dans le cadre d'un
+mod&#xE8;le de diffusion en logiciel libre.
 
-L'exercice de ces libertés est assorti de certains devoirs à la charge
-des utilisateurs afin de préserver ce statut au cours des
-redistributions ultérieures.
+L'exercice de ces libert&#xE9;s est assorti de certains devoirs &#xE0; la charge
+des utilisateurs afin de pr&#xE9;server ce statut au cours des
+redistributions ult&#xE9;rieures.
 
-L'accessibilité au code source et les droits de copie, de modification
-et de redistribution qui en découlent ont pour contrepartie de n'offrir
-aux utilisateurs qu'une garantie limitée et de ne faire peser sur
+L'accessibilit&#xE9; au code source et les droits de copie, de modification
+et de redistribution qui en d&#xE9;coulent ont pour contrepartie de n'offrir
+aux utilisateurs qu'une garantie limit&#xE9;e et de ne faire peser sur
 l'auteur du logiciel, le titulaire des droits patrimoniaux et les
-concédants successifs qu'une responsabilité restreinte.
+conc&#xE9;dants successifs qu'une responsabilit&#xE9; restreinte.
 
-A cet égard l'attention de l'utilisateur est attirée sur les risques
-associés au chargement, à l'utilisation, à la modification et/ou au
-développement et à la reproduction du logiciel par l'utilisateur étant
-donné sa spécificité de logiciel libre, qui peut le rendre complexe à
-manipuler et qui le réserve donc à des développeurs ou des
-professionnels avertis possédant des connaissances informatiques
-approfondies. Les utilisateurs sont donc invités à charger et tester
-l'adéquation du logiciel à leurs besoins dans des conditions permettant
-d'assurer la sécurité de leurs systèmes et/ou de leurs données et, plus
-généralement, à l'utiliser et l'exploiter dans les mêmes conditions de
-sécurité. Ce contrat peut être reproduit et diffusé librement, sous
-réserve de le conserver en l'état, sans ajout ni suppression de clauses.
+A cet &#xE9;gard l'attention de l'utilisateur est attir&#xE9;e sur les risques
+associ&#xE9;s au chargement, &#xE0; l'utilisation, &#xE0; la modification et/ou au
+d&#xE9;veloppement et &#xE0; la reproduction du logiciel par l'utilisateur &#xE9;tant
+donn&#xE9; sa sp&#xE9;cificit&#xE9; de logiciel libre, qui peut le rendre complexe &#xE0;
+manipuler et qui le r&#xE9;serve donc &#xE0; des d&#xE9;veloppeurs ou des
+professionnels avertis poss&#xE9;dant des connaissances informatiques
+approfondies. Les utilisateurs sont donc invit&#xE9;s &#xE0; charger et tester
+l'ad&#xE9;quation du logiciel &#xE0; leurs besoins dans des conditions permettant
+d'assurer la s&#xE9;curit&#xE9; de leurs syst&#xE8;mes et/ou de leurs donn&#xE9;es et, plus
+g&#xE9;n&#xE9;ralement, &#xE0; l'utiliser et l'exploiter dans les m&#xEA;mes conditions de
+s&#xE9;curit&#xE9;. Ce contrat peut &#xEA;tre reproduit et diffus&#xE9; librement, sous
+r&#xE9;serve de le conserver en l'&#xE9;tat, sans ajout ni suppression de clauses.
 
-Ce contrat est susceptible de s'appliquer à tout logiciel dont le
-titulaire des droits patrimoniaux décide de soumettre l'exploitation aux
+Ce contrat est susceptible de s'appliquer &#xE0; tout logiciel dont le
+titulaire des droits patrimoniaux d&#xE9;cide de soumettre l'exploitation aux
 dispositions qu'il contient.
 
 
     Article 1 - DEFINITIONS
 
-Dans ce contrat, les termes suivants, lorsqu'ils seront écrits avec une
+Dans ce contrat, les termes suivants, lorsqu'ils seront &#xE9;crits avec une
 lettre capitale, auront la signification suivante:
 
-Contrat: désigne le présent contrat de licence, ses éventuelles versions
-postérieures et annexes.
+Contrat: d&#xE9;signe le pr&#xE9;sent contrat de licence, ses &#xE9;ventuelles versions
+post&#xE9;rieures et annexes.
 
-Logiciel: désigne le logiciel sous sa forme de Code Objet et/ou de Code
-Source et le cas échéant sa documentation, dans leur état au moment de
-l'acceptation du Contrat par le Licencié.
+Logiciel: d&#xE9;signe le logiciel sous sa forme de Code Objet et/ou de Code
+Source et le cas &#xE9;ch&#xE9;ant sa documentation, dans leur &#xE9;tat au moment de
+l'acceptation du Contrat par le Licenci&#xE9;.
 
-Logiciel Initial: désigne le Logiciel sous sa forme de Code Source et
-éventuellement de Code Objet et le cas échéant sa documentation, dans
-leur état au moment de leur première diffusion sous les termes du Contrat.
+Logiciel Initial: d&#xE9;signe le Logiciel sous sa forme de Code Source et
+&#xE9;ventuellement de Code Objet et le cas &#xE9;ch&#xE9;ant sa documentation, dans
+leur &#xE9;tat au moment de leur premi&#xE8;re diffusion sous les termes du Contrat.
 
-Logiciel Modifié: désigne le Logiciel modifié par au moins une
+Logiciel Modifi&#xE9;: d&#xE9;signe le Logiciel modifi&#xE9; par au moins une
 Contribution.
 
-Code Source: désigne l'ensemble des instructions et des lignes de
-programme du Logiciel et auquel l'accès est nécessaire en vue de
+Code Source: d&#xE9;signe l'ensemble des instructions et des lignes de
+programme du Logiciel et auquel l'acc&#xE8;s est n&#xE9;cessaire en vue de
 modifier le Logiciel.
 
-Code Objet: désigne les fichiers binaires issus de la compilation du
+Code Objet: d&#xE9;signe les fichiers binaires issus de la compilation du
 Code Source.
 
-Titulaire: désigne le ou les détenteurs des droits patrimoniaux d'auteur
+Titulaire: d&#xE9;signe le ou les d&#xE9;tenteurs des droits patrimoniaux d'auteur
 sur le Logiciel Initial.
 
-Licencié: désigne le ou les utilisateurs du Logiciel ayant accepté le
+Licenci&#xE9;: d&#xE9;signe le ou les utilisateurs du Logiciel ayant accept&#xE9; le
 Contrat.
 
-Contributeur: désigne le Licencié auteur d'au moins une Contribution.
+Contributeur: d&#xE9;signe le Licenci&#xE9; auteur d'au moins une Contribution.
 
-Concédant: désigne le Titulaire ou toute personne physique ou morale
+Conc&#xE9;dant: d&#xE9;signe le Titulaire ou toute personne physique ou morale
 distribuant le Logiciel sous le Contrat.
 
-Contribution: désigne l'ensemble des modifications, corrections,
-traductions, adaptations et/ou nouvelles fonctionnalités intégrées dans
+Contribution: d&#xE9;signe l'ensemble des modifications, corrections,
+traductions, adaptations et/ou nouvelles fonctionnalit&#xE9;s int&#xE9;gr&#xE9;es dans
 le Logiciel par tout Contributeur, ainsi que tout Module Interne.
 
-Module: désigne un ensemble de fichiers sources y compris leur
-documentation qui permet de réaliser des fonctionnalités ou services
-supplémentaires à ceux fournis par le Logiciel.
+Module: d&#xE9;signe un ensemble de fichiers sources y compris leur
+documentation qui permet de r&#xE9;aliser des fonctionnalit&#xE9;s ou services
+suppl&#xE9;mentaires &#xE0; ceux fournis par le Logiciel.
 
-Module Externe: désigne tout Module, non dérivé du Logiciel, tel que ce
-Module et le Logiciel s'exécutent dans des espaces d'adressage
-différents, l'un appelant l'autre au moment de leur exécution.
+Module Externe: d&#xE9;signe tout Module, non d&#xE9;riv&#xE9; du Logiciel, tel que ce
+Module et le Logiciel s'ex&#xE9;cutent dans des espaces d'adressage
+diff&#xE9;rents, l'un appelant l'autre au moment de leur ex&#xE9;cution.
 
-Module Interne: désigne tout Module lié au Logiciel de telle sorte
-qu'ils s'exécutent dans le même espace d'adressage.
+Module Interne: d&#xE9;signe tout Module li&#xE9; au Logiciel de telle sorte
+qu'ils s'ex&#xE9;cutent dans le m&#xEA;me espace d'adressage.
 
-GNU GPL: désigne la GNU General Public License dans sa version 2 ou
-toute version ultérieure, telle que publiée par Free Software Foundation
+GNU GPL: d&#xE9;signe la GNU General Public License dans sa version 2 ou
+toute version ult&#xE9;rieure, telle que publi&#xE9;e par Free Software Foundation
 Inc.
 
-Parties: désigne collectivement le Licencié et le Concédant.
+Parties: d&#xE9;signe collectivement le Licenci&#xE9; et le Conc&#xE9;dant.
 
 Ces termes s'entendent au singulier comme au pluriel.
 
 
     Article 2 - OBJET
 
-Le Contrat a pour objet la concession par le Concédant au Licencié d'une
+Le Contrat a pour objet la concession par le Conc&#xE9;dant au Licenci&#xE9; d'une
 licence non exclusive, cessible et mondiale du Logiciel telle que
-définie ci-après à l'article 5 pour toute la durée de protection des droits
+d&#xE9;finie ci-apr&#xE8;s &#xE0; l'article 5 pour toute la dur&#xE9;e de protection des droits
 portant sur ce Logiciel.
 
 
     Article 3 - ACCEPTATION
 
-3.1 L'acceptation par le Licencié des termes du Contrat est réputée
+3.1 L'acceptation par le Licenci&#xE9; des termes du Contrat est r&#xE9;put&#xE9;e
 acquise du fait du premier des faits suivants:
 
     * (i) le chargement du Logiciel par tout moyen notamment par
-      téléchargement à partir d'un serveur distant ou par chargement à
+      t&#xE9;l&#xE9;chargement &#xE0; partir d'un serveur distant ou par chargement &#xE0;
       partir d'un support physique;
-    * (ii) le premier exercice par le Licencié de l'un quelconque des
-      droits concédés par le Contrat.
+    * (ii) le premier exercice par le Licenci&#xE9; de l'un quelconque des
+      droits conc&#xE9;d&#xE9;s par le Contrat.
 
 3.2 Un exemplaire du Contrat, contenant notamment un avertissement
-relatif aux spécificités du Logiciel, à la restriction de garantie et à
-la limitation à un usage par des utilisateurs expérimentés a été mis à
-disposition du Licencié préalablement à son acceptation telle que
-définie à l'article 3.1 ci dessus et le Licencié reconnaît en avoir pris
+relatif aux sp&#xE9;cificit&#xE9;s du Logiciel, &#xE0; la restriction de garantie et &#xE0;
+la limitation &#xE0; un usage par des utilisateurs exp&#xE9;riment&#xE9;s a &#xE9;t&#xE9; mis &#xE0;
+disposition du Licenci&#xE9; pr&#xE9;alablement &#xE0; son acceptation telle que
+d&#xE9;finie &#xE0; l'article 3.1 ci dessus et le Licenci&#xE9; reconna&#xEE;t en avoir pris
 connaissance.
 
 
@@ -821,47 +881,47 @@ connaissance.
 
       4.1 ENTREE EN VIGUEUR
 
-Le Contrat entre en vigueur à la date de son acceptation par le Licencié
-telle que définie en 3.1.
+Le Contrat entre en vigueur &#xE0; la date de son acceptation par le Licenci&#xE9;
+telle que d&#xE9;finie en 3.1.
 
 
       4.2 DUREE
 
-Le Contrat produira ses effets pendant toute la durée légale de
+Le Contrat produira ses effets pendant toute la dur&#xE9;e l&#xE9;gale de
 protection des droits patrimoniaux portant sur le Logiciel.
 
 
     Article 5 - ETENDUE DES DROITS CONCEDES
 
-Le Concédant concède au Licencié, qui accepte, les droits suivants sur
-le Logiciel pour toutes destinations et pour la durée du Contrat dans
-les conditions ci-après détaillées.
+Le Conc&#xE9;dant conc&#xE8;de au Licenci&#xE9;, qui accepte, les droits suivants sur
+le Logiciel pour toutes destinations et pour la dur&#xE9;e du Contrat dans
+les conditions ci-apr&#xE8;s d&#xE9;taill&#xE9;es.
 
-Par ailleurs, si le Concédant détient ou venait à détenir un ou
-plusieurs brevets d'invention protégeant tout ou partie des
-fonctionnalités du Logiciel ou de ses composants, il s'engage à ne pas
-opposer les éventuels droits conférés par ces brevets aux Licenciés
+Par ailleurs, si le Conc&#xE9;dant d&#xE9;tient ou venait &#xE0; d&#xE9;tenir un ou
+plusieurs brevets d'invention prot&#xE9;geant tout ou partie des
+fonctionnalit&#xE9;s du Logiciel ou de ses composants, il s'engage &#xE0; ne pas
+opposer les &#xE9;ventuels droits conf&#xE9;r&#xE9;s par ces brevets aux Licenci&#xE9;s
 successifs qui utiliseraient, exploiteraient ou modifieraient le
-Logiciel. En cas de cession de ces brevets, le Concédant s'engage à
-faire reprendre les obligations du présent alinéa aux cessionnaires.
+Logiciel. En cas de cession de ces brevets, le Conc&#xE9;dant s'engage &#xE0;
+faire reprendre les obligations du pr&#xE9;sent alin&#xE9;a aux cessionnaires.
 
 
       5.1 DROIT D'UTILISATION
 
-Le Licencié est autorisé à utiliser le Logiciel, sans restriction quant
-aux domaines d'application, étant ci-après précisé que cela comporte:
+Le Licenci&#xE9; est autoris&#xE9; &#xE0; utiliser le Logiciel, sans restriction quant
+aux domaines d'application, &#xE9;tant ci-apr&#xE8;s pr&#xE9;cis&#xE9; que cela comporte:
 
    1. la reproduction permanente ou provisoire du Logiciel en tout ou
       partie par tout moyen et sous toute forme.
 
-   2. le chargement, l'affichage, l'exécution, ou le stockage du
+   2. le chargement, l'affichage, l'ex&#xE9;cution, ou le stockage du
       Logiciel sur tout support.
 
-   3. la possibilité d'en observer, d'en étudier, ou d'en tester le
-      fonctionnement afin de déterminer les idées et principes qui sont
-      à la base de n'importe quel élément de ce Logiciel; et ceci,
-      lorsque le Licencié effectue toute opération de chargement,
-      d'affichage, d'exécution, de transmission ou de stockage du
+   3. la possibilit&#xE9; d'en observer, d'en &#xE9;tudier, ou d'en tester le
+      fonctionnement afin de d&#xE9;terminer les id&#xE9;es et principes qui sont
+      &#xE0; la base de n'importe quel &#xE9;l&#xE9;ment de ce Logiciel; et ceci,
+      lorsque le Licenci&#xE9; effectue toute op&#xE9;ration de chargement,
+      d'affichage, d'ex&#xE9;cution, de transmission ou de stockage du
       Logiciel qu'il est en droit d'effectuer en vertu du Contrat.
 
 
@@ -869,85 +929,85 @@ aux domaines d'application, étant ci-après précisé que cela comporte:
 
 Le droit d'apporter des Contributions comporte le droit de traduire,
 d'adapter, d'arranger ou d'apporter toute autre modification au Logiciel
-et le droit de reproduire le logiciel en résultant.
+et le droit de reproduire le logiciel en r&#xE9;sultant.
 
-Le Licencié est autorisé à apporter toute Contribution au Logiciel sous
-réserve de mentionner, de façon explicite, son nom en tant qu'auteur de
-cette Contribution et la date de création de celle-ci.
+Le Licenci&#xE9; est autoris&#xE9; &#xE0; apporter toute Contribution au Logiciel sous
+r&#xE9;serve de mentionner, de fa&#xE7;on explicite, son nom en tant qu'auteur de
+cette Contribution et la date de cr&#xE9;ation de celle-ci.
 
 
       5.3 DROIT DE DISTRIBUTION
 
 Le droit de distribution comporte notamment le droit de diffuser, de
 transmettre et de communiquer le Logiciel au public sur tout support et
-par tout moyen ainsi que le droit de mettre sur le marché à titre
-onéreux ou gratuit, un ou des exemplaires du Logiciel par tout procédé.
+par tout moyen ainsi que le droit de mettre sur le march&#xE9; &#xE0; titre
+on&#xE9;reux ou gratuit, un ou des exemplaires du Logiciel par tout proc&#xE9;d&#xE9;.
 
-Le Licencié est autorisé à distribuer des copies du Logiciel, modifié ou
-non, à des tiers dans les conditions ci-après détaillées.
+Le Licenci&#xE9; est autoris&#xE9; &#xE0; distribuer des copies du Logiciel, modifi&#xE9; ou
+non, &#xE0; des tiers dans les conditions ci-apr&#xE8;s d&#xE9;taill&#xE9;es.
 
 
         5.3.1 DISTRIBUTION DU LOGICIEL SANS MODIFICATION
 
-Le Licencié est autorisé à distribuer des copies conformes du Logiciel,
-sous forme de Code Source ou de Code Objet, à condition que cette
-distribution respecte les dispositions du Contrat dans leur totalité et
-soit accompagnée:
+Le Licenci&#xE9; est autoris&#xE9; &#xE0; distribuer des copies conformes du Logiciel,
+sous forme de Code Source ou de Code Objet, &#xE0; condition que cette
+distribution respecte les dispositions du Contrat dans leur totalit&#xE9; et
+soit accompagn&#xE9;e:
 
    1. d'un exemplaire du Contrat,
 
-   2. d'un avertissement relatif à la restriction de garantie et de
-      responsabilité du Concédant telle que prévue aux articles 8
+   2. d'un avertissement relatif &#xE0; la restriction de garantie et de
+      responsabilit&#xE9; du Conc&#xE9;dant telle que pr&#xE9;vue aux articles 8
       et 9,
 
-et que, dans le cas où seul le Code Objet du Logiciel est redistribué,
-le Licencié permette aux futurs Licenciés d'accéder facilement au Code
-Source complet du Logiciel en indiquant les modalités d'accès, étant
-entendu que le coût additionnel d'acquisition du Code Source ne devra
-pas excéder le simple coût de transfert des données.
+et que, dans le cas o&#xF9; seul le Code Objet du Logiciel est redistribu&#xE9;,
+le Licenci&#xE9; permette aux futurs Licenci&#xE9;s d'acc&#xE9;der facilement au Code
+Source complet du Logiciel en indiquant les modalit&#xE9;s d'acc&#xE8;s, &#xE9;tant
+entendu que le co&#xFB;t additionnel d'acquisition du Code Source ne devra
+pas exc&#xE9;der le simple co&#xFB;t de transfert des donn&#xE9;es.
 
 
         5.3.2 DISTRIBUTION DU LOGICIEL MODIFIE
 
-Lorsque le Licencié apporte une Contribution au Logiciel, les conditions
-de distribution du Logiciel Modifié en résultant sont alors soumises à
-l'intégralité des dispositions du Contrat.
+Lorsque le Licenci&#xE9; apporte une Contribution au Logiciel, les conditions
+de distribution du Logiciel Modifi&#xE9; en r&#xE9;sultant sont alors soumises &#xE0;
+l'int&#xE9;gralit&#xE9; des dispositions du Contrat.
 
-Le Licencié est autorisé à distribuer le Logiciel Modifié, sous forme de
-code source ou de code objet, à condition que cette distribution
-respecte les dispositions du Contrat dans leur totalité et soit
-accompagnée:
+Le Licenci&#xE9; est autoris&#xE9; &#xE0; distribuer le Logiciel Modifi&#xE9;, sous forme de
+code source ou de code objet, &#xE0; condition que cette distribution
+respecte les dispositions du Contrat dans leur totalit&#xE9; et soit
+accompagn&#xE9;e:
 
    1. d'un exemplaire du Contrat,
 
-   2. d'un avertissement relatif à la restriction de garantie et de
-      responsabilité du Concédant telle que prévue aux articles 8
+   2. d'un avertissement relatif &#xE0; la restriction de garantie et de
+      responsabilit&#xE9; du Conc&#xE9;dant telle que pr&#xE9;vue aux articles 8
       et 9,
 
-et que, dans le cas où seul le code objet du Logiciel Modifié est
-redistribué, le Licencié permette aux futurs Licenciés d'accéder
-facilement au code source complet du Logiciel Modifié en indiquant les
-modalités d'accès, étant entendu que le coût additionnel d'acquisition
-du code source ne devra pas excéder le simple coût de transfert des données.
+et que, dans le cas o&#xF9; seul le code objet du Logiciel Modifi&#xE9; est
+redistribu&#xE9;, le Licenci&#xE9; permette aux futurs Licenci&#xE9;s d'acc&#xE9;der
+facilement au code source complet du Logiciel Modifi&#xE9; en indiquant les
+modalit&#xE9;s d'acc&#xE8;s, &#xE9;tant entendu que le co&#xFB;t additionnel d'acquisition
+du code source ne devra pas exc&#xE9;der le simple co&#xFB;t de transfert des donn&#xE9;es.
 
 
         5.3.3 DISTRIBUTION DES MODULES EXTERNES
 
-Lorsque le Licencié a développé un Module Externe les conditions du
-Contrat ne s'appliquent pas à ce Module Externe, qui peut être distribué
-sous un contrat de licence différent.
+Lorsque le Licenci&#xE9; a d&#xE9;velopp&#xE9; un Module Externe les conditions du
+Contrat ne s'appliquent pas &#xE0; ce Module Externe, qui peut &#xEA;tre distribu&#xE9;
+sous un contrat de licence diff&#xE9;rent.
 
 
         5.3.4 COMPATIBILITE AVEC LA LICENCE GNU GPL
 
-Le Licencié peut inclure un code soumis aux dispositions d'une des
-versions de la licence GNU GPL dans le Logiciel modifié ou non et
-distribuer l'ensemble sous les conditions de la même version de la
+Le Licenci&#xE9; peut inclure un code soumis aux dispositions d'une des
+versions de la licence GNU GPL dans le Logiciel modifi&#xE9; ou non et
+distribuer l'ensemble sous les conditions de la m&#xEA;me version de la
 licence GNU GPL.
 
-Le Licencié peut inclure le Logiciel modifié ou non dans un code soumis
+Le Licenci&#xE9; peut inclure le Logiciel modifi&#xE9; ou non dans un code soumis
 aux dispositions d'une des versions de la licence GNU GPL et distribuer
-l'ensemble sous les conditions de la même version de la licence GNU GPL.
+l'ensemble sous les conditions de la m&#xEA;me version de la licence GNU GPL.
 
 
     Article 6 - PROPRIETE INTELLECTUELLE
@@ -955,146 +1015,146 @@ l'ensemble sous les conditions de la même version de la licence GNU GPL.
 
       6.1 SUR LE LOGICIEL INITIAL
 
-Le Titulaire est détenteur des droits patrimoniaux sur le Logiciel
+Le Titulaire est d&#xE9;tenteur des droits patrimoniaux sur le Logiciel
 Initial. Toute utilisation du Logiciel Initial est soumise au respect
 des conditions dans lesquelles le Titulaire a choisi de diffuser son
-oeuvre et nul autre n'a la faculté de modifier les conditions de
+oeuvre et nul autre n'a la facult&#xE9; de modifier les conditions de
 diffusion de ce Logiciel Initial.
 
-Le Titulaire s'engage à ce que le Logiciel Initial reste au moins régi
-par le Contrat et ce, pour la durée visée à l'article 4.2.
+Le Titulaire s'engage &#xE0; ce que le Logiciel Initial reste au moins r&#xE9;gi
+par le Contrat et ce, pour la dur&#xE9;e vis&#xE9;e &#xE0; l'article 4.2.
 
 
       6.2 SUR LES CONTRIBUTIONS
 
-Le Licencié qui a développé une Contribution est titulaire sur celle-ci
-des droits de propriété intellectuelle dans les conditions définies par
-la législation applicable.
+Le Licenci&#xE9; qui a d&#xE9;velopp&#xE9; une Contribution est titulaire sur celle-ci
+des droits de propri&#xE9;t&#xE9; intellectuelle dans les conditions d&#xE9;finies par
+la l&#xE9;gislation applicable.
 
 
       6.3 SUR LES MODULES EXTERNES
 
-Le Licencié qui a développé un Module Externe est titulaire sur celui-ci
-des droits de propriété intellectuelle dans les conditions définies par
-la législation applicable et reste libre du choix du contrat régissant
+Le Licenci&#xE9; qui a d&#xE9;velopp&#xE9; un Module Externe est titulaire sur celui-ci
+des droits de propri&#xE9;t&#xE9; intellectuelle dans les conditions d&#xE9;finies par
+la l&#xE9;gislation applicable et reste libre du choix du contrat r&#xE9;gissant
 sa diffusion.
 
 
       6.4 DISPOSITIONS COMMUNES
 
-Le Licencié s'engage expressément:
+Le Licenci&#xE9; s'engage express&#xE9;ment:
 
-   1. à ne pas supprimer ou modifier de quelque manière que ce soit les
-      mentions de propriété intellectuelle apposées sur le Logiciel;
+   1. &#xE0; ne pas supprimer ou modifier de quelque mani&#xE8;re que ce soit les
+      mentions de propri&#xE9;t&#xE9; intellectuelle appos&#xE9;es sur le Logiciel;
 
-   2. à reproduire à l'identique lesdites mentions de propriété
-      intellectuelle sur les copies du Logiciel modifié ou non.
+   2. &#xE0; reproduire &#xE0; l'identique lesdites mentions de propri&#xE9;t&#xE9;
+      intellectuelle sur les copies du Logiciel modifi&#xE9; ou non.
 
-Le Licencié s'engage à ne pas porter atteinte, directement ou
-indirectement, aux droits de propriété intellectuelle du Titulaire et/ou
-des Contributeurs sur le Logiciel et à prendre, le cas échéant, à
-l'égard de son personnel toutes les mesures nécessaires pour assurer le
-respect des dits droits de propriété intellectuelle du Titulaire et/ou
+Le Licenci&#xE9; s'engage &#xE0; ne pas porter atteinte, directement ou
+indirectement, aux droits de propri&#xE9;t&#xE9; intellectuelle du Titulaire et/ou
+des Contributeurs sur le Logiciel et &#xE0; prendre, le cas &#xE9;ch&#xE9;ant, &#xE0;
+l'&#xE9;gard de son personnel toutes les mesures n&#xE9;cessaires pour assurer le
+respect des dits droits de propri&#xE9;t&#xE9; intellectuelle du Titulaire et/ou
 des Contributeurs.
 
 
     Article 7 - SERVICES ASSOCIES
 
-7.1 Le Contrat n'oblige en aucun cas le Concédant à la réalisation de
+7.1 Le Contrat n'oblige en aucun cas le Conc&#xE9;dant &#xE0; la r&#xE9;alisation de
 prestations d'assistance technique ou de maintenance du Logiciel.
 
-Cependant le Concédant reste libre de proposer ce type de services. Les
+Cependant le Conc&#xE9;dant reste libre de proposer ce type de services. Les
 termes et conditions d'une telle assistance technique et/ou d'une telle
-maintenance seront alors déterminés dans un acte séparé. Ces actes de
+maintenance seront alors d&#xE9;termin&#xE9;s dans un acte s&#xE9;par&#xE9;. Ces actes de
 maintenance et/ou assistance technique n'engageront que la seule
-responsabilité du Concédant qui les propose.
+responsabilit&#xE9; du Conc&#xE9;dant qui les propose.
 
-7.2 De même, tout Concédant est libre de proposer, sous sa seule
-responsabilité, à ses licenciés une garantie, qui n'engagera que lui,
-lors de la redistribution du Logiciel et/ou du Logiciel Modifié et ce,
-dans les conditions qu'il souhaite. Cette garantie et les modalités
-financières de son application feront l'objet d'un acte séparé entre le
-Concédant et le Licencié.
+7.2 De m&#xEA;me, tout Conc&#xE9;dant est libre de proposer, sous sa seule
+responsabilit&#xE9;, &#xE0; ses licenci&#xE9;s une garantie, qui n'engagera que lui,
+lors de la redistribution du Logiciel et/ou du Logiciel Modifi&#xE9; et ce,
+dans les conditions qu'il souhaite. Cette garantie et les modalit&#xE9;s
+financi&#xE8;res de son application feront l'objet d'un acte s&#xE9;par&#xE9; entre le
+Conc&#xE9;dant et le Licenci&#xE9;.
 
 
     Article 8 - RESPONSABILITE
 
-8.1 Sous réserve des dispositions de l'article 8.2, le Licencié a la 
-faculté, sous réserve de prouver la faute du Concédant concerné, de
-solliciter la réparation du préjudice direct qu'il subirait du fait du
+8.1 Sous r&#xE9;serve des dispositions de l'article 8.2, le Licenci&#xE9; a la 
+facult&#xE9;, sous r&#xE9;serve de prouver la faute du Conc&#xE9;dant concern&#xE9;, de
+solliciter la r&#xE9;paration du pr&#xE9;judice direct qu'il subirait du fait du
 Logiciel et dont il apportera la preuve.
 
-8.2 La responsabilité du Concédant est limitée aux engagements pris en
-application du Contrat et ne saurait être engagée en raison notamment:
-(i) des dommages dus à l'inexécution, totale ou partielle, de ses
-obligations par le Licencié, (ii) des dommages directs ou indirects
-découlant de l'utilisation ou des performances du Logiciel subis par le
-Licencié et (iii) plus généralement d'un quelconque dommage indirect. En
-particulier, les Parties conviennent expressément que tout préjudice
-financier ou commercial (par exemple perte de données, perte de
-bénéfices, perte d'exploitation, perte de clientèle ou de commandes,
-manque à gagner, trouble commercial quelconque) ou toute action dirigée
-contre le Licencié par un tiers, constitue un dommage indirect et
-n'ouvre pas droit à réparation par le Concédant.
+8.2 La responsabilit&#xE9; du Conc&#xE9;dant est limit&#xE9;e aux engagements pris en
+application du Contrat et ne saurait &#xEA;tre engag&#xE9;e en raison notamment:
+(i) des dommages dus &#xE0; l'inex&#xE9;cution, totale ou partielle, de ses
+obligations par le Licenci&#xE9;, (ii) des dommages directs ou indirects
+d&#xE9;coulant de l'utilisation ou des performances du Logiciel subis par le
+Licenci&#xE9; et (iii) plus g&#xE9;n&#xE9;ralement d'un quelconque dommage indirect. En
+particulier, les Parties conviennent express&#xE9;ment que tout pr&#xE9;judice
+financier ou commercial (par exemple perte de donn&#xE9;es, perte de
+b&#xE9;n&#xE9;fices, perte d'exploitation, perte de client&#xE8;le ou de commandes,
+manque &#xE0; gagner, trouble commercial quelconque) ou toute action dirig&#xE9;e
+contre le Licenci&#xE9; par un tiers, constitue un dommage indirect et
+n'ouvre pas droit &#xE0; r&#xE9;paration par le Conc&#xE9;dant.
 
 
     Article 9 - GARANTIE
 
-9.1 Le Licencié reconnaît que l'état actuel des connaissances
+9.1 Le Licenci&#xE9; reconna&#xEE;t que l'&#xE9;tat actuel des connaissances
 scientifiques et techniques au moment de la mise en circulation du
-Logiciel ne permet pas d'en tester et d'en vérifier toutes les
-utilisations ni de détecter l'existence d'éventuels défauts. L'attention
-du Licencié a été attirée sur ce point sur les risques associés au
-chargement, à l'utilisation, la modification et/ou au développement et à
-la reproduction du Logiciel qui sont réservés à des utilisateurs avertis.
+Logiciel ne permet pas d'en tester et d'en v&#xE9;rifier toutes les
+utilisations ni de d&#xE9;tecter l'existence d'&#xE9;ventuels d&#xE9;fauts. L'attention
+du Licenci&#xE9; a &#xE9;t&#xE9; attir&#xE9;e sur ce point sur les risques associ&#xE9;s au
+chargement, &#xE0; l'utilisation, la modification et/ou au d&#xE9;veloppement et &#xE0;
+la reproduction du Logiciel qui sont r&#xE9;serv&#xE9;s &#xE0; des utilisateurs avertis.
 
-Il relève de la responsabilité du Licencié de contrôler, par tous
-moyens, l'adéquation du produit à ses besoins, son bon fonctionnement et
+Il rel&#xE8;ve de la responsabilit&#xE9; du Licenci&#xE9; de contr&#xF4;ler, par tous
+moyens, l'ad&#xE9;quation du produit &#xE0; ses besoins, son bon fonctionnement et
 de s'assurer qu'il ne causera pas de dommages aux personnes et aux biens.
 
-9.2 Le Concédant déclare de bonne foi être en droit de concéder
-l'ensemble des droits attachés au Logiciel (comprenant notamment les
-droits visés à l'article 5).
+9.2 Le Conc&#xE9;dant d&#xE9;clare de bonne foi &#xEA;tre en droit de conc&#xE9;der
+l'ensemble des droits attach&#xE9;s au Logiciel (comprenant notamment les
+droits vis&#xE9;s &#xE0; l'article 5).
 
-9.3 Le Licencié reconnaît que le Logiciel est fourni "en l'état" par le
-Concédant sans autre garantie, expresse ou tacite, que celle prévue à
+9.3 Le Licenci&#xE9; reconna&#xEE;t que le Logiciel est fourni "en l'&#xE9;tat" par le
+Conc&#xE9;dant sans autre garantie, expresse ou tacite, que celle pr&#xE9;vue &#xE0;
 l'article 9.2 et notamment sans aucune garantie sur sa valeur commerciale, 
-son caractère sécurisé, innovant ou pertinent.
+son caract&#xE8;re s&#xE9;curis&#xE9;, innovant ou pertinent.
 
-En particulier, le Concédant ne garantit pas que le Logiciel est exempt
+En particulier, le Conc&#xE9;dant ne garantit pas que le Logiciel est exempt
 d'erreur, qu'il fonctionnera sans interruption, qu'il sera compatible
-avec l'équipement du Licencié et sa configuration logicielle ni qu'il
-remplira les besoins du Licencié.
+avec l'&#xE9;quipement du Licenci&#xE9; et sa configuration logicielle ni qu'il
+remplira les besoins du Licenci&#xE9;.
 
-9.4 Le Concédant ne garantit pas, de manière expresse ou tacite, que le
-Logiciel ne porte pas atteinte à un quelconque droit de propriété
+9.4 Le Conc&#xE9;dant ne garantit pas, de mani&#xE8;re expresse ou tacite, que le
+Logiciel ne porte pas atteinte &#xE0; un quelconque droit de propri&#xE9;t&#xE9;
 intellectuelle d'un tiers portant sur un brevet, un logiciel ou sur tout
-autre droit de propriété. Ainsi, le Concédant exclut toute garantie au
-profit du Licencié contre les actions en contrefaçon qui pourraient être
-diligentées au titre de l'utilisation, de la modification, et de la
-redistribution du Logiciel. Néanmoins, si de telles actions sont
-exercées contre le Licencié, le Concédant lui apportera son aide
-technique et juridique pour sa défense. Cette aide technique et
-juridique est déterminée au cas par cas entre le Concédant concerné et
-le Licencié dans le cadre d'un protocole d'accord. Le Concédant dégage
-toute responsabilité quant à l'utilisation de la dénomination du
-Logiciel par le Licencié. Aucune garantie n'est apportée quant à
-l'existence de droits antérieurs sur le nom du Logiciel et sur
+autre droit de propri&#xE9;t&#xE9;. Ainsi, le Conc&#xE9;dant exclut toute garantie au
+profit du Licenci&#xE9; contre les actions en contrefa&#xE7;on qui pourraient &#xEA;tre
+diligent&#xE9;es au titre de l'utilisation, de la modification, et de la
+redistribution du Logiciel. N&#xE9;anmoins, si de telles actions sont
+exerc&#xE9;es contre le Licenci&#xE9;, le Conc&#xE9;dant lui apportera son aide
+technique et juridique pour sa d&#xE9;fense. Cette aide technique et
+juridique est d&#xE9;termin&#xE9;e au cas par cas entre le Conc&#xE9;dant concern&#xE9; et
+le Licenci&#xE9; dans le cadre d'un protocole d'accord. Le Conc&#xE9;dant d&#xE9;gage
+toute responsabilit&#xE9; quant &#xE0; l'utilisation de la d&#xE9;nomination du
+Logiciel par le Licenci&#xE9;. Aucune garantie n'est apport&#xE9;e quant &#xE0;
+l'existence de droits ant&#xE9;rieurs sur le nom du Logiciel et sur
 l'existence d'une marque.
 
 
     Article 10 - RESILIATION
 
-10.1 En cas de manquement par le Licencié aux obligations mises à sa
-charge par le Contrat, le Concédant pourra résilier de plein droit le
-Contrat trente (30) jours après notification adressée au Licencié et
-restée sans effet.
+10.1 En cas de manquement par le Licenci&#xE9; aux obligations mises &#xE0; sa
+charge par le Contrat, le Conc&#xE9;dant pourra r&#xE9;silier de plein droit le
+Contrat trente (30) jours apr&#xE8;s notification adress&#xE9;e au Licenci&#xE9; et
+rest&#xE9;e sans effet.
 
-10.2 Le Licencié dont le Contrat est résilié n'est plus autorisé à
+10.2 Le Licenci&#xE9; dont le Contrat est r&#xE9;sili&#xE9; n'est plus autoris&#xE9; &#xE0;
 utiliser, modifier ou distribuer le Logiciel. Cependant, toutes les
-licences qu'il aura concédées antérieurement à la résiliation du Contrat
-resteront valides sous réserve qu'elles aient été effectuées en
-conformité avec le Contrat.
+licences qu'il aura conc&#xE9;d&#xE9;es ant&#xE9;rieurement &#xE0; la r&#xE9;siliation du Contrat
+resteront valides sous r&#xE9;serve qu'elles aient &#xE9;t&#xE9; effectu&#xE9;es en
+conformit&#xE9; avec le Contrat.
 
 
     Article 11 - DISPOSITIONS DIVERSES
@@ -1102,91 +1162,92 @@ conformité avec le Contrat.
 
       11.1 CAUSE EXTERIEURE
 
-Aucune des Parties ne sera responsable d'un retard ou d'une défaillance
-d'exécution du Contrat qui serait dû à un cas de force majeure, un cas
-fortuit ou une cause extérieure, telle que, notamment, le mauvais
-fonctionnement ou les interruptions du réseau électrique ou de
-télécommunication, la paralysie du réseau liée à une attaque
-informatique, l'intervention des autorités gouvernementales, les
-catastrophes naturelles, les dégâts des eaux, les tremblements de terre,
-le feu, les explosions, les grèves et les conflits sociaux, l'état de
+Aucune des Parties ne sera responsable d'un retard ou d'une d&#xE9;faillance
+d'ex&#xE9;cution du Contrat qui serait d&#xFB; &#xE0; un cas de force majeure, un cas
+fortuit ou une cause ext&#xE9;rieure, telle que, notamment, le mauvais
+fonctionnement ou les interruptions du r&#xE9;seau &#xE9;lectrique ou de
+t&#xE9;l&#xE9;communication, la paralysie du r&#xE9;seau li&#xE9;e &#xE0; une attaque
+informatique, l'intervention des autorit&#xE9;s gouvernementales, les
+catastrophes naturelles, les d&#xE9;g&#xE2;ts des eaux, les tremblements de terre,
+le feu, les explosions, les gr&#xE8;ves et les conflits sociaux, l'&#xE9;tat de
 guerre...
 
 11.2 Le fait, par l'une ou l'autre des Parties, d'omettre en une ou
-plusieurs occasions de se prévaloir d'une ou plusieurs dispositions du
+plusieurs occasions de se pr&#xE9;valoir d'une ou plusieurs dispositions du
 Contrat, ne pourra en aucun cas impliquer renonciation par la Partie
-intéressée à s'en prévaloir ultérieurement.
+int&#xE9;ress&#xE9;e &#xE0; s'en pr&#xE9;valoir ult&#xE9;rieurement.
 
-11.3 Le Contrat annule et remplace toute convention antérieure, écrite
-ou orale, entre les Parties sur le même objet et constitue l'accord
+11.3 Le Contrat annule et remplace toute convention ant&#xE9;rieure, &#xE9;crite
+ou orale, entre les Parties sur le m&#xEA;me objet et constitue l'accord
 entier entre les Parties sur cet objet. Aucune addition ou modification
-aux termes du Contrat n'aura d'effet à l'égard des Parties à moins
-d'être faite par écrit et signée par leurs représentants dûment habilités.
+aux termes du Contrat n'aura d'effet &#xE0; l'&#xE9;gard des Parties &#xE0; moins
+d'&#xEA;tre faite par &#xE9;crit et sign&#xE9;e par leurs repr&#xE9;sentants d&#xFB;ment habilit&#xE9;s.
 
-11.4 Dans l'hypothèse où une ou plusieurs des dispositions du Contrat
-s'avèrerait contraire à une loi ou à un texte applicable, existants ou
-futurs, cette loi ou ce texte prévaudrait, et les Parties feraient les
-amendements nécessaires pour se conformer à cette loi ou à ce texte.
-Toutes les autres dispositions resteront en vigueur. De même, la
-nullité, pour quelque raison que ce soit, d'une des dispositions du
-Contrat ne saurait entraîner la nullité de l'ensemble du Contrat.
+11.4 Dans l'hypoth&#xE8;se o&#xF9; une ou plusieurs des dispositions du Contrat
+s'av&#xE8;rerait contraire &#xE0; une loi ou &#xE0; un texte applicable, existants ou
+futurs, cette loi ou ce texte pr&#xE9;vaudrait, et les Parties feraient les
+amendements n&#xE9;cessaires pour se conformer &#xE0; cette loi ou &#xE0; ce texte.
+Toutes les autres dispositions resteront en vigueur. De m&#xEA;me, la
+nullit&#xE9;, pour quelque raison que ce soit, d'une des dispositions du
+Contrat ne saurait entra&#xEE;ner la nullit&#xE9; de l'ensemble du Contrat.
 
 
       11.5 LANGUE
 
-Le Contrat est rédigé en langue française et en langue anglaise, ces
-deux versions faisant également foi.
+Le Contrat est r&#xE9;dig&#xE9; en langue fran&#xE7;aise et en langue anglaise, ces
+deux versions faisant &#xE9;galement foi.
 
 
     Article 12 - NOUVELLES VERSIONS DU CONTRAT
 
-12.1 Toute personne est autorisée à copier et distribuer des copies de
+12.1 Toute personne est autoris&#xE9;e &#xE0; copier et distribuer des copies de
 ce Contrat.
 
-12.2 Afin d'en préserver la cohérence, le texte du Contrat est protégé
-et ne peut être modifié que par les auteurs de la licence, lesquels se
-réservent le droit de publier périodiquement des mises à jour ou de
-nouvelles versions du Contrat, qui posséderont chacune un numéro
-distinct. Ces versions ultérieures seront susceptibles de prendre en
-compte de nouvelles problématiques rencontrées par les logiciels libres.
+12.2 Afin d'en pr&#xE9;server la coh&#xE9;rence, le texte du Contrat est prot&#xE9;g&#xE9;
+et ne peut &#xEA;tre modifi&#xE9; que par les auteurs de la licence, lesquels se
+r&#xE9;servent le droit de publier p&#xE9;riodiquement des mises &#xE0; jour ou de
+nouvelles versions du Contrat, qui poss&#xE9;deront chacune un num&#xE9;ro
+distinct. Ces versions ult&#xE9;rieures seront susceptibles de prendre en
+compte de nouvelles probl&#xE9;matiques rencontr&#xE9;es par les logiciels libres.
 
-12.3 Tout Logiciel diffusé sous une version donnée du Contrat ne pourra
-faire l'objet d'une diffusion ultérieure que sous la même version du
-Contrat ou une version postérieure, sous réserve des dispositions de
+12.3 Tout Logiciel diffus&#xE9; sous une version donn&#xE9;e du Contrat ne pourra
+faire l'objet d'une diffusion ult&#xE9;rieure que sous la m&#xEA;me version du
+Contrat ou une version post&#xE9;rieure, sous r&#xE9;serve des dispositions de
 l'article 5.3.4.
 
 
     Article 13 - LOI APPLICABLE ET COMPETENCE TERRITORIALE
 
-13.1 Le Contrat est régi par la loi française. Les Parties conviennent
-de tenter de régler à l'amiable les différends ou litiges qui
-viendraient à se produire par suite ou à l'occasion du Contrat.
+13.1 Le Contrat est r&#xE9;gi par la loi fran&#xE7;aise. Les Parties conviennent
+de tenter de r&#xE9;gler &#xE0; l'amiable les diff&#xE9;rends ou litiges qui
+viendraient &#xE0; se produire par suite ou &#xE0; l'occasion du Contrat.
 
-13.2 A défaut d'accord amiable dans un délai de deux (2) mois à compter
-de leur survenance et sauf situation relevant d'une procédure d'urgence,
-les différends ou litiges seront portés par la Partie la plus diligente
-devant les Tribunaux compétents de Paris.
+13.2 A d&#xE9;faut d'accord amiable dans un d&#xE9;lai de deux (2) mois &#xE0; compter
+de leur survenance et sauf situation relevant d'une proc&#xE9;dure d'urgence,
+les diff&#xE9;rends ou litiges seront port&#xE9;s par la Partie la plus diligente
+devant les Tribunaux comp&#xE9;tents de Paris.
 
 
 Version 2.0 du 2006-09-05.</property>
     <property name="authors">Romain Ballais &lt;rballais@users.berlios.de&gt;</property>
     <property name="documenters">Romain Ballais &lt;rballais@users.berlios.de&gt;</property>
-    <property name="wrap_license">True</property>
     <child internal-child="vbox">
-      <widget class="GtkVBox" id="dialog-vbox1">
+      <widget class="GtkVBox" id="dialog-vbox13">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child>
           <placeholder/>
         </child>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area1">
+          <widget class="GtkHButtonBox" id="dialog-action_area13">
             <property name="visible">True</property>
-            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <property name="layout_style">end</property>
           </widget>
           <packing>
             <property name="expand">False</property>
-            <property name="pack_type">GTK_PACK_END</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
           </packing>
         </child>
       </widget>
