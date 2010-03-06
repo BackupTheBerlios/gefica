@@ -7,15 +7,15 @@
     <property name="type_hint">dialog</property>
     <signal name="selection_changed" handler="on_openFileChooserDialog_selection_changed"/>
     <child internal-child="vbox">
-      <widget class="GtkVBox" id="dialog-vbox2">
+      <widget class="GtkVBox" id="openFileChooserDialogVBox">
         <property name="visible">True</property>
         <property name="spacing">24</property>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area2">
+          <widget class="GtkHButtonBox" id="openFileChooserDialogActionArea">
             <property name="visible">True</property>
             <property name="layout_style">end</property>
             <child>
-              <widget class="GtkButton" id="button1">
+              <widget class="GtkButton" id="cancelButton">
                 <property name="label">gtk-cancel</property>
                 <property name="response_id">-6</property>
                 <property name="visible">True</property>
@@ -31,7 +31,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkButton" id="button2">
+              <widget class="GtkButton" id="openButton">
                 <property name="label">gtk-open</property>
                 <property name="response_id">-5</property>
                 <property name="visible">True</property>
@@ -686,12 +686,12 @@
     <property name="text" translatable="yes">G&#xE9;n&#xE9;ration PDF termin&#xE9;e.</property>
     <property name="secondary_text" translatable="yes">Les fichiers g&#xE9;n&#xE9;r&#xE9;s se trouvent &#xE0; l'emplacement suivant :</property>
     <child internal-child="vbox">
-      <widget class="GtkVBox" id="dialog-vbox12">
+      <widget class="GtkVBox" id="popupMessageDialogVBox">
         <property name="visible">True</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area12">
+          <widget class="GtkHButtonBox" id="popupMessageDialogActionArea">
             <property name="visible">True</property>
             <property name="layout_style">end</property>
           </widget>
@@ -1232,7 +1232,7 @@ Version 2.0 du 2006-09-05.</property>
     <property name="authors">Romain Ballais &lt;rballais@users.berlios.de&gt;</property>
     <property name="documenters">Romain Ballais &lt;rballais@users.berlios.de&gt;</property>
     <child internal-child="vbox">
-      <widget class="GtkVBox" id="dialog-vbox13">
+      <widget class="GtkVBox" id="aboutDialogVBox">
         <property name="visible">True</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
@@ -1240,7 +1240,7 @@ Version 2.0 du 2006-09-05.</property>
           <placeholder/>
         </child>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area13">
+          <widget class="GtkHButtonBox" id="aboutDialogActionArea">
             <property name="visible">True</property>
             <property name="layout_style">end</property>
           </widget>
