@@ -3,10 +3,10 @@
 
 import gtk
 
-# A the 'src' directory to the path:
+# A the 'gefica' directory to the path:
 import sys
 import os.path
-sys.path.append(os.path.abspath('./src'))
+sys.path.append(os.path.abspath('./gefica'))
 
 # Import of the main classes:
 from GFCCard import *
@@ -14,7 +14,7 @@ from GFCCardsManager import *
 from GFCInterfaceManager import *
 
 def main():
-	im = GFCInterfaceManager('src/glade/interface.glade')
+	im = GFCInterfaceManager('gefica/glade/interface.glade')
 	cm = GFCCardsManager()
 	im.register_cards_manager(cm)
 	im.init_application()
