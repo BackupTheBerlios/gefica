@@ -9,7 +9,12 @@ Welcome to GeFiCa's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+
+   introduction.rst
+   userguide.rst
+   roadmap.rst
+   devguide.rst
 
 Indices and tables
 ==================
