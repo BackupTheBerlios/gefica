@@ -13,10 +13,10 @@ class GFCInterfaceManager:
 		""" """
 		self.gladefile = gladefile
 		self.gladeTrees = {
-			"theAboutDialog" : gtk.glade.XML(self.gladefile, "theAboutDialog"),
-			"popupMessageDialog" : gtk.glade.XML(self.gladefile, "popupMessageDialog"),
 			"openFileChooserDialog" : gtk.glade.XML(self.gladefile, "openFileChooserDialog"),
 			"saveFileChooserDialog" : gtk.glade.XML(self.gladefile, "saveFileChooserDialog"),
+			"theAboutDialog" : gtk.glade.XML(self.gladefile, "theAboutDialog"),
+			"popupMessageDialog" : gtk.glade.XML(self.gladefile, "popupMessageDialog"),
 			"mainWindow" : gtk.glade.XML(self.gladefile, "mainWindow")
 		}
 		
@@ -48,6 +48,8 @@ class GFCInterfaceManager:
 		#---
 		self.__getitem__("previewDrawingArea").connect("expose-event", self.preview_expose_event_cb)
 		#---
+		self.__getitem__("mainWindow").connect("destroy", self.quit_cb)
+		#---
 		self.__getitem__("mainWindow").show()
 
 	def __getitem__(self, key):
@@ -58,22 +60,32 @@ class GFCInterfaceManager:
 				return widget
 
 	def register_cards_manager(self, cm):
-		""" """
+		"""Register a GFCCardsManager instance."""
 		self.cards_manager = cm
 
 	def init_application(self):
-		""" """
+		"""Init the application by reading the user configuration file and setting the interface primary state."""
 		self.read_config_file()
 		self.init_interface()
 		
 
 	def read_config_file(self):
-		""" """
+		"""Read the user configuration file if there is one, else create one."""
 		config_reader = ConfigParser.SafeConfigParser()
 		user_home = os.getenv("HOME")
-		config_reader.read([user_home+'/.config/GFC/gfc.conf'])
-		self.data_path = config_reader.get("data", "path")
-		self.data_file = config_reader.get("data", "file")
+		self.recent_project_files_number = 0
+		self.recent_project_files_path = []
+		parsed_files = config_reader.read([user_home+'/.config/gefica/gefica.conf'])
+		if(parsed_files != []):
+			self.recent_project_files_number = config_reader.get("recent", "files")
+			for index in range(int(self.recent_project_files_number)):
+				self.recent_project_files_path.append(config_reader.get("recent", str(index)))
+		else:
+			os.system("touch "+user_home+"/.config/gefica/gefica.conf")
+			os.system("echo [preferences] > "+user_home+"/.config/gefica/gefica.conf")
+			os.system("echo >> "+user_home+"/.config/gefica/gefica.conf")
+			os.system("echo [recent] >> "+user_home+"/.config/gefica/gefica.conf")
+			os.system("echo files: 0 >> "+user_home+"/.config/gefica/gefica.conf")
 
 	def init_interface(self):
 		""" """
@@ -96,6 +108,8 @@ class GFCInterfaceManager:
 	# Callbacks definitions:
 	#---
 	def new_project_cb(self, item):
+		""" """
+		self.cards_manager.reset()
 		pass
 
 	def open_project_cb(self, item):
@@ -106,6 +120,8 @@ class GFCInterfaceManager:
 			self.filename = self.__getitem__("openFileChooserDialog").get_filename()
 			self.cards_manager.read_cards_from_file(self.filename)
 			self.init_interface()
+			# Compute the path where cards will be generated:
+			self.project_path = self.filename.rsplit('/', 1)[0]
 
 	def save_project_cb(self, item):
 		""" """
@@ -190,9 +206,9 @@ class GFCInterfaceManager:
 
 	def generate_pdf_cb(self, item):
 		""" """
-		self.cards_manager.generate_svg(self.data_path)
-		self.cards_manager.generate_pdf(self.data_path)
-		self.__getitem__("popupMessageDialog").format_secondary_text("Les fiches ont été générées à l'emplacement suivant :\n"+self.data_path)
+		self.cards_manager.generate_svg(self.project_path)
+		self.cards_manager.generate_pdf(self.project_path)
+		self.__getitem__("popupMessageDialog").format_secondary_text("Les fiches ont été générées à l'emplacement suivant :\n"+self.project_path)
 		response = self.__getitem__("popupMessageDialog").run()
 		self.__getitem__("popupMessageDialog").hide()
 
@@ -222,9 +238,9 @@ class GFCInterfaceManager:
 	def preview_expose_event_cb(self, widget, event):
 		""" """
 		index = self.__getitem__("goComboBox").get_active()
-		if index > -1 and os.path.exists(self.data_path+"/card_"+str(index)+".pdf"):
-			self.pdf = poppler.document_new_from_file ("file://"+self.data_path+"/card_"+str(index)+".pdf", None)
-			width, height = self.pdf.get_page(0).get_size()		
+		if index > -1 and os.path.exists(self.project_path+"/card_"+str(index)+".pdf"):
+			self.pdf = poppler.document_new_from_file ("file://"+self.project_path+"/card_"+str(index)+".pdf", None)
+			width, height = self.pdf.get_page(0).get_size()
 			widget.set_size_request(int(width), int(height))
 			cairo_renderer = widget.window.cairo_create()
 			cairo_renderer.set_source_rgb(1, 1, 1)

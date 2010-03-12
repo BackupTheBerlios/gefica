@@ -70,11 +70,20 @@ class GFCCardsManager:
 		self.create_card()
 		return self.nbCards -1
 
+	def reset(self):
+		""" """
+		self.__init__()
+
+	def set_template_file(self, tf):
+		""" """
+		self.template_path = tf
+
 	def read_cards_from_file(self, cf):
 		""" """
 		cards_reader = ConfigParser.SafeConfigParser()
 		cards_reader.read([cf])
 		nbcards = cards_reader.getint("infos", "nbcards")
+		self.template_path = cards_reader.get("infos", "template")
 		for index in range(0,nbcards):
 			card = self.create_card()
 			card.set_character(cards_reader.get(str(index), "character"))
@@ -88,6 +97,7 @@ class GFCCardsManager:
 		cards_writer = ConfigParser.SafeConfigParser()
 		cards_writer.add_section("infos")
 		cards_writer.set("infos", "nbcards", str(self.nbCards))
+		cards_writer.set("infos", "template", self.template_path)
 		for index in range(0, self.nbCards):
 			cards_writer.add_section(str(index))
 			cards_writer.set(str(index), "character", self.get_card_character(index))
@@ -102,7 +112,7 @@ class GFCCardsManager:
 
 	def generate_svg(self, path):
 		""" """
-		svgtemplate = open(path+'/template.svg')
+		svgtemplate = open(self.template_path)
 		svgtemplatestring = svgtemplate.read()
 		svgtemplate.close()
 		for index in range(0, self.nbCards):
@@ -118,32 +128,9 @@ class GFCCardsManager:
 			filehandle.write(svgcode.substitute(data))
 			filehandle.close()
 			
-		
-
-	def generate_latex(self):
-		""" """
-		for index in range(0, self.nbCards):
-			latexcode = "\documentclass[12pt,french,b5paper]{article}" + "\n"
-			latexcode+= "\usepackage[encapsulated]{CJK}" + "\n"
-			latexcode+= "\usepackage[utf8]{inputenc}" + "\n"
-			latexcode+= "\\begin{document}" + "\n"
-			latexcode+= "\pagestyle{empty}" + "\n"
-			latexcode+= "\\begin{center}" + "\n"
-			latexcode+= self.cards[index].character + "\\\\" +"\n"
-			latexcode+= self.cards[index].pinyin + "\\\\" +"\n"
-			latexcode+= "\end{center}" + "\n"
-			latexcode+= self.cards[index].translation + "\\\\" +"\n"
-			latexcode+= self.cards[index].example + "\\\\" +"\n"
-			latexcode+= self.cards[index].example_translation + "\\\\" +"\n"
-			latexcode+= "\end{document}" + "\n"
-			fileHandle = open('cards/card_'+str(index)+'.tex', 'w')
-			fileHandle.write (latexcode)
-			fileHandle.close()
-		
 	def generate_pdf(self, path):
 		""" """
 		for index in range(0, self.nbCards):
-			#os.popen('cd cards; pdflatex card_'+str(index)+'.tex').read()
-			os.popen('inkscape -z -A '+path+'card_'+str(index)+'.pdf -f '+path+'card_'+str(index)+'.svg').read()
+			os.popen('inkscape -z -A '+path+'/card_'+str(index)+'.pdf -f '+path+'/card_'+str(index)+'.svg').read()
 
 
