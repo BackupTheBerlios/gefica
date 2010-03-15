@@ -68,7 +68,6 @@ class GFCInterfaceManager:
 		self.read_config_file()
 		self.init_interface()
 		
-
 	def read_config_file(self):
 		"""Read the user configuration file if there is one, else create one."""
 		config_reader = ConfigParser.SafeConfigParser()
@@ -89,6 +88,8 @@ class GFCInterfaceManager:
 
 	def init_interface(self):
 		""" """
+		for index in range(self.cards_manager.get_nb_cards()):
+			self.__getitem__("goComboBox").remove_text(self.cards_manager.get_nb_cards()-index-1)
 		for index in range(self.cards_manager.get_nb_cards()):
 			self.__getitem__("goComboBox").append_text(self.cards_manager.get_card_character(index))
 		if self.cards_manager.get_nb_cards() > 0:
@@ -202,6 +203,8 @@ class GFCInterfaceManager:
 		self.cards_manager.set_card_translation(index, self.__getitem__("translationEntry").get_text())
 		self.cards_manager.set_card_example(index, self.__getitem__("exampleEntry").get_text())
 		self.cards_manager.set_card_example_translation(index, self.__getitem__("translated_exampleEntry").get_text())
+		self.init_interface()
+		self.update_interface(index)
 
 
 	def generate_pdf_cb(self, item):
