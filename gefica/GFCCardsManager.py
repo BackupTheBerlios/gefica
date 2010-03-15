@@ -9,13 +9,13 @@ class GFCCardsManager:
 	""" """
 	def __init__(self):
 		""" """
-		self.nbCards = 0
+		self.nb_cards = 0
 		self.cards = []
 		self.template_path = ""
 
 	def get_nb_cards(self):
 		""" """
-		return self.nbCards
+		return self.nb_cards
 
 	def get_card_character(self, index):
 		""" """
@@ -59,31 +59,31 @@ class GFCCardsManager:
 
 	def create_card(self):
 		""" """
-		c = GFCCard(self.nbCards)
-		self.cards.append(c)
-		self.nbCards += 1
-		return c
+		card = GFCCard(self.nb_cards)
+		self.cards.append(card)
+		self.nb_cards += 1
+		return card
 
 	def add_card(self):
 		""" """
 		self.create_card()
-		return self.nbCards -1
+		return self.nb_cards -1
 
 	def reset(self):
 		""" """
 		self.__init__()
 
-	def set_template_file(self, tf):
+	def set_template_file(self, new_template_path):
 		""" """
-		self.template_path = tf
+		self.template_path = new_template_path
 
-	def read_cards_from_file(self, cf):
+	def read_cards_from_file(self, cards_file):
 		""" """
 		cards_reader = ConfigParser.SafeConfigParser()
-		cards_reader.read([cf])
-		nbcards = cards_reader.getint("infos", "nbcards")
+		cards_reader.read([cards_file])
+		nb_cards = cards_reader.getint("infos", "nb_cards")
 		self.template_path = cards_reader.get("infos", "template")
-		for index in range(0, nbcards):
+		for index in range(0, nb_cards):
 			card = self.create_card()
 			card.set_character(cards_reader.get(str(index), "character"))
 			card.set_pinyin(cards_reader.get(str(index), "pinyin"))
@@ -91,20 +91,20 @@ class GFCCardsManager:
 			card.set_example(cards_reader.get(str(index), "example"))
 			card.set_example_translation(cards_reader.get(str(index), "example translation"))
 
-	def write_cards_into_file(self, cf):
+	def write_cards_into_file(self, cards_file):
 		""" """
 		cards_writer = ConfigParser.SafeConfigParser()
 		cards_writer.add_section("infos")
-		cards_writer.set("infos", "nbcards", str(self.nbCards))
+		cards_writer.set("infos", "nb_cards", str(self.nb_cards))
 		cards_writer.set("infos", "template", self.template_path)
-		for index in range(0, self.nbCards):
+		for index in range(0, self.nb_cards):
 			cards_writer.add_section(str(index))
 			cards_writer.set(str(index), "character", self.get_card_character(index))
 			cards_writer.set(str(index), "pinyin", self.get_card_pinyin(index))
 			cards_writer.set(str(index), "translation", self.get_card_translation(index))
 			cards_writer.set(str(index), "example", self.get_card_example(index))
 			cards_writer.set(str(index), "example translation", self.get_card_example_translation(index))
-		datafile = open(cf,'w')		
+		datafile = open(cards_file,'w')
 		cards_writer.write(datafile)
 		datafile.close()
 		
@@ -114,7 +114,7 @@ class GFCCardsManager:
 		svgtemplate = open(self.template_path)
 		svgtemplatestring = svgtemplate.read()
 		svgtemplate.close()
-		for index in range(0, self.nbCards):
+		for index in range(0, self.nb_cards):
 			svgcode = string.Template(svgtemplatestring)
 			data = dict()
 			data["character"] = self.get_card_character(index)
@@ -129,7 +129,7 @@ class GFCCardsManager:
 			
 	def generate_pdf(self, path):
 		""" """
-		for index in range(0, self.nbCards):
+		for index in range(0, self.nb_cards):
 			os.popen('inkscape -z -A '+path+'/card_'+str(index)+'.pdf -f '+path+'/card_'+str(index)+'.svg').read()
 
 

@@ -13,10 +13,10 @@ from gefica.GFCCardsManager import GFCCardsManager
 from gefica.GFCInterfaceManager import GFCInterfaceManager
 
 def main():
-	im = GFCInterfaceManager('gefica/glade/interface.glade')
-	cm = GFCCardsManager()
-	im.register_cards_manager(cm)
-	im.init_application()
+	interface_manager = GFCInterfaceManager('gefica/glade/interface.glade')
+	cards_manager = GFCCardsManager()
+	interface_manager.register_cards_manager(cards_manager)
+	interface_manager.init_application()
 
 	# Starts the GTK toolkit:
 	gtk.main()

@@ -65,9 +65,9 @@ class GFCInterfaceManager:
 			if(widget != None):
 				return widget
 
-	def register_cards_manager(self, cm):
+	def register_cards_manager(self, new_cards_manager):
 		"""Register a GFCCardsManager instance."""
-		self.cards_manager = cm
+		self.cards_manager = new_cards_manager
 
 	def init_application(self):
 		"""Init the application by reading the user configuration file and setting the interface primary state."""
@@ -255,7 +255,7 @@ class GFCInterfaceManager:
 			widget.set_size_request(int(width), int(height))
 			cairo_renderer = widget.window.cairo_create()
 			cairo_renderer.set_source_rgb(1, 1, 1)
-        		cairo_renderer.scale(1, 1)
+			cairo_renderer.scale(1, 1)
 			cairo_renderer.rectangle(0, 0, width, height)
 			cairo_renderer.fill()
 			pdf.get_page(0).render(cairo_renderer)
