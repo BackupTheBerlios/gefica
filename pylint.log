@@ -7,10 +7,8 @@ C:  1: Missing docstring
 ************* Module gefica.GFCCard
 C:  1: Missing docstring
 C:  3:GFCCard: Empty docstring
-C: 14:GFCCard.PrintSelf: Invalid name "PrintSelf" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 14:GFCCard.PrintSelf: Empty docstring
-C: 23:GFCCard.SetCardIndex: Invalid name "SetCardIndex" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 23:GFCCard.SetCardIndex: Empty docstring
+C: 14:GFCCard.print_self: Empty docstring
+C: 23:GFCCard.set_card_index: Empty docstring
 C: 27:GFCCard.set_character: Empty docstring
 C: 27:GFCCard.set_character: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)
 C: 27:GFCCard.set_character: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)
@@ -18,131 +16,122 @@ C: 31:GFCCard.get_character: Empty docstring
 C: 35:GFCCard.set_pinyin: Empty docstring
 C: 35:GFCCard.set_pinyin: Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)
 C: 35:GFCCard.set_pinyin: Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 39:GFCCard.get_pinyin: Missing docstring
-C: 42:GFCCard.set_translation: Empty docstring
-C: 42:GFCCard.set_translation: Invalid name "t" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 42:GFCCard.set_translation: Invalid name "t" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 46:GFCCard.get_translation: Empty docstring
-C: 50:GFCCard.set_example: Empty docstring
-C: 50:GFCCard.set_example: Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 50:GFCCard.set_example: Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 54:GFCCard.get_example: Empty docstring
-C: 58:GFCCard.set_example_translation: Empty docstring
-C: 58:GFCCard.set_example_translation: Invalid name "et" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 58:GFCCard.set_example_translation: Invalid name "et" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 62:GFCCard.get_example_translation: Empty docstring
+C: 39:GFCCard.get_pinyin: Empty docstring
+C: 43:GFCCard.set_translation: Empty docstring
+C: 43:GFCCard.set_translation: Invalid name "t" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 43:GFCCard.set_translation: Invalid name "t" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 47:GFCCard.get_translation: Empty docstring
+C: 51:GFCCard.set_example: Empty docstring
+C: 51:GFCCard.set_example: Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 51:GFCCard.set_example: Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 55:GFCCard.get_example: Empty docstring
+C: 59:GFCCard.set_example_translation: Empty docstring
+C: 59:GFCCard.set_example_translation: Invalid name "et" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 59:GFCCard.set_example_translation: Invalid name "et" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 63:GFCCard.get_example_translation: Empty docstring
 ************* Module gefica.GFCInterfaceManager
-C: 16: Line too long (84/80)
-C: 17: Line too long (84/80)
-C: 25: Line too long (81/80)
-C: 26: Line too long (81/80)
-C: 27: Line too long (86/80)
-C: 31: Line too long (82/80)
-C: 32: Line too long (84/80)
+C: 22: Line too long (84/80)
+C: 23: Line too long (84/80)
+C: 31: Line too long (81/80)
+C: 32: Line too long (81/80)
 C: 33: Line too long (86/80)
 C: 37: Line too long (82/80)
-C: 39: Line too long (97/80)
-C: 40: Line too long (86/80)
-C: 43: Line too long (87/80)
-C: 49: Line too long (94/80)
-C: 67: Line too long (108/80)
-C: 81: Line too long (82/80)
-C: 92: Line too long (88/80)
-C: 94: Line too long (91/80)
-C:101: Line too long (180/80)
-C:102: Line too long (91/80)
-C:103: Line too long (85/80)
-C:104: Line too long (95/80)
-C:105: Line too long (87/80)
-C:106: Line too long (110/80)
-C:160: Line too long (90/80)
-C:200: Line too long (93/80)
-C:201: Line too long (87/80)
-C:202: Line too long (97/80)
-C:203: Line too long (89/80)
-C:204: Line too long (112/80)
-C:213: Line too long (145/80)
-C:231: Line too long (88/80)
-C:243: Line too long (81/80)
-C:244: Line too long (107/80)
-W:249: Found indentation with spaces instead of tabs
+C: 38: Line too long (84/80)
+C: 39: Line too long (86/80)
+C: 43: Line too long (82/80)
+C: 45: Line too long (97/80)
+C: 46: Line too long (86/80)
+C: 49: Line too long (87/80)
+C: 55: Line too long (94/80)
+C: 73: Line too long (108/80)
+C: 85: Line too long (82/80)
+C: 96: Line too long (88/80)
+C: 98: Line too long (91/80)
+C:105: Line too long (180/80)
+C:106: Line too long (91/80)
+C:107: Line too long (85/80)
+C:108: Line too long (95/80)
+C:109: Line too long (87/80)
+C:110: Line too long (110/80)
+C:169: Line too long (90/80)
+C:209: Line too long (93/80)
+C:210: Line too long (87/80)
+C:211: Line too long (97/80)
+C:212: Line too long (89/80)
+C:213: Line too long (112/80)
+C:222: Line too long (145/80)
+C:240: Line too long (88/80)
+C:252: Line too long (81/80)
+C:253: Line too long (102/80)
+W:258: Found indentation with spaces instead of tabs
 C:  1: Missing docstring
 C: 10:GFCInterfaceManager: Empty docstring
-C: 15:GFCInterfaceManager.__init__: Invalid name "gladeTrees" (should match [a-z_][a-z0-9_]{2,30}$)
-R: 10:GFCInterfaceManager: Too many instance attributes (8/7)
-C: 57:GFCInterfaceManager.__getitem__: Invalid name "gladeTree" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 62:GFCInterfaceManager.register_cards_manager: Invalid name "cm" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 62:GFCInterfaceManager.register_cards_manager: Invalid name "cm" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 89:GFCInterfaceManager.init_interface: Empty docstring
-C: 98:GFCInterfaceManager.update_interface: Empty docstring
-C:111:GFCInterfaceManager.new_project_cb: Empty docstring
-C:115:GFCInterfaceManager.open_project_cb: Empty docstring
-C:126:GFCInterfaceManager.save_project_cb: Empty docstring
-E:129:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
-C:132:GFCInterfaceManager.save_project_as_cb: Empty docstring
-C:140:GFCInterfaceManager.quit_cb: Empty docstring
-R:140:GFCInterfaceManager.quit_cb: Method could be a function
-C:145:GFCInterfaceManager.cut_activate_cb: Missing docstring
-C:148:GFCInterfaceManager.copy_activate_cb: Missing docstring
-C:151:GFCInterfaceManager.paste_activate_cb: Missing docstring
-C:154:GFCInterfaceManager.delete_activate_cb: Missing docstring
-C:158:GFCInterfaceManager.new_card_cb: Missing docstring
-C:163:GFCInterfaceManager.edit_card_cb: Empty docstring
-C:181:GFCInterfaceManager.apply_card_modification_cb: Empty docstring
-C:209:GFCInterfaceManager.generate_pdf_cb: Empty docstring
-C:218:GFCInterfaceManager.show_about_dialog_cb: Empty docstring
-C:224:GFCInterfaceManager.go_to_previous_cb: Empty docstring
-C:229:GFCInterfaceManager.go_to_next_cb: Empty docstring
-C:234:GFCInterfaceManager.go_cb: Empty docstring
-C:240:GFCInterfaceManager.preview_expose_event_cb: Empty docstring
+C: 68:GFCInterfaceManager.register_cards_manager: Invalid name "cm" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 68:GFCInterfaceManager.register_cards_manager: Invalid name "cm" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 93:GFCInterfaceManager.init_interface: Empty docstring
+C:102:GFCInterfaceManager.update_interface: Empty docstring
+C:115:GFCInterfaceManager.new_project_cb: Empty docstring
+C:119:GFCInterfaceManager.open_project_cb: Empty docstring
+C:130:GFCInterfaceManager.save_project_cb: Empty docstring
+E:133:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
+C:136:GFCInterfaceManager.save_project_as_cb: Empty docstring
+C:144:GFCInterfaceManager.quit_cb: Empty docstring
+R:144:GFCInterfaceManager.quit_cb: Method could be a function
+C:149:GFCInterfaceManager.cut_activate_cb: Empty docstring
+C:153:GFCInterfaceManager.copy_activate_cb: Empty docstring
+C:157:GFCInterfaceManager.paste_activate_cb: Empty docstring
+C:161:GFCInterfaceManager.delete_activate_cb: Empty docstring
+C:166:GFCInterfaceManager.new_card_cb: Empty docstring
+C:172:GFCInterfaceManager.edit_card_cb: Empty docstring
+C:190:GFCInterfaceManager.apply_card_modification_cb: Empty docstring
+C:218:GFCInterfaceManager.generate_pdf_cb: Empty docstring
+C:227:GFCInterfaceManager.show_about_dialog_cb: Empty docstring
+C:233:GFCInterfaceManager.go_to_previous_cb: Empty docstring
+C:238:GFCInterfaceManager.go_to_next_cb: Empty docstring
+C:243:GFCInterfaceManager.go_cb: Empty docstring
+C:249:GFCInterfaceManager.preview_expose_event_cb: Empty docstring
 R: 10:GFCInterfaceManager: Too many public methods (23/20)
-W: 64:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
-W: 76:GFCInterfaceManager.read_config_file: Attribute 'recent_project_files_path' defined outside __init__
-W:124:GFCInterfaceManager.open_project_cb: Attribute 'project_path' defined outside __init__
-W:120:GFCInterfaceManager.open_project_cb: Attribute 'filename' defined outside __init__
-W:244:GFCInterfaceManager.preview_expose_event_cb: Attribute 'pdf' defined outside __init__
-W: 75:GFCInterfaceManager.read_config_file: Attribute 'recent_project_files_number' defined outside __init__
+W: 70:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
 W:  6: Unused import cairo
 ************* Module gefica.GFCCardsManager
-C: 91: Line too long (84/80)
-C:105: Line too long (96/80)
-C:132: Line too long (105/80)
+C: 92: Line too long (84/80)
+C:106: Line too long (96/80)
+C:133: Line too long (105/80)
 C:  1: Missing docstring
 W:  4: Uses of a deprecated module 'string'
 C:  8:GFCCardsManager: Empty docstring
 C: 12:GFCCardsManager.__init__: Invalid name "nbCards" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 15:GFCCardsManager.get_nb_cards: Empty docstring
-C: 19:GFCCardsManager.get_card_character: Empty docstring
-C: 23:GFCCardsManager.get_card_pinyin: Empty docstring
-C: 27:GFCCardsManager.get_card_translation: Empty docstring
-C: 31:GFCCardsManager.get_card_example: Empty docstring
-C: 35:GFCCardsManager.get_card_example_translation: Empty docstring
-C: 39:GFCCardsManager.set_card_character: Empty docstring
-C: 43:GFCCardsManager.set_card_pinyin: Empty docstring
-C: 47:GFCCardsManager.set_card_translation: Empty docstring
-C: 51:GFCCardsManager.set_card_example: Empty docstring
-C: 55:GFCCardsManager.set_card_example_translation: Empty docstring
-C: 59:GFCCardsManager.create_card: Empty docstring
-C: 61:GFCCardsManager.create_card: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 66:GFCCardsManager.add_card: Empty docstring
-C: 71:GFCCardsManager.reset: Empty docstring
-C: 75:GFCCardsManager.set_template_file: Empty docstring
-C: 75:GFCCardsManager.set_template_file: Invalid name "tf" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 75:GFCCardsManager.set_template_file: Invalid name "tf" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 79:GFCCardsManager.read_cards_from_file: Empty docstring
-C: 79:GFCCardsManager.read_cards_from_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 79:GFCCardsManager.read_cards_from_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 93:GFCCardsManager.write_cards_into_file: Empty docstring
-C: 93:GFCCardsManager.write_cards_into_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
-C: 93:GFCCardsManager.write_cards_into_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
-C:111:GFCCardsManager.generate_svg: Empty docstring
-C:129:GFCCardsManager.generate_pdf: Empty docstring
-W: 77:GFCCardsManager.set_template_file: Attribute 'template_path' defined outside __init__
+C: 16:GFCCardsManager.get_nb_cards: Empty docstring
+C: 20:GFCCardsManager.get_card_character: Empty docstring
+C: 24:GFCCardsManager.get_card_pinyin: Empty docstring
+C: 28:GFCCardsManager.get_card_translation: Empty docstring
+C: 32:GFCCardsManager.get_card_example: Empty docstring
+C: 36:GFCCardsManager.get_card_example_translation: Empty docstring
+C: 40:GFCCardsManager.set_card_character: Empty docstring
+C: 44:GFCCardsManager.set_card_pinyin: Empty docstring
+C: 48:GFCCardsManager.set_card_translation: Empty docstring
+C: 52:GFCCardsManager.set_card_example: Empty docstring
+C: 56:GFCCardsManager.set_card_example_translation: Empty docstring
+C: 60:GFCCardsManager.create_card: Empty docstring
+C: 62:GFCCardsManager.create_card: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 67:GFCCardsManager.add_card: Empty docstring
+C: 72:GFCCardsManager.reset: Empty docstring
+C: 76:GFCCardsManager.set_template_file: Empty docstring
+C: 76:GFCCardsManager.set_template_file: Invalid name "tf" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 76:GFCCardsManager.set_template_file: Invalid name "tf" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 80:GFCCardsManager.read_cards_from_file: Empty docstring
+C: 80:GFCCardsManager.read_cards_from_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 80:GFCCardsManager.read_cards_from_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 94:GFCCardsManager.write_cards_into_file: Empty docstring
+C: 94:GFCCardsManager.write_cards_into_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 94:GFCCardsManager.write_cards_into_file: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)
+C:112:GFCCardsManager.generate_svg: Empty docstring
+C:130:GFCCardsManager.generate_pdf: Empty docstring
 
 
 Report
 ======
-314 statements analysed.
+317 statements analysed.
 
 Duplication
 -----------
@@ -163,13 +152,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |318    |77.00 |320      |-2.00      |
+|code      |317    |74.24 |318      |-1.00      |
 +----------+-------+------+---------+-----------+
-|docstring |60     |14.53 |60       |=          |
+|docstring |66     |15.46 |60       |+6.00      |
 +----------+-------+------+---------+-----------+
-|comment   |16     |3.87  |16       |=          |
+|comment   |17     |3.98  |16       |+1.00      |
 +----------+-------+------+---------+-----------+
-|empty     |19     |4.60  |21       |-2.00      |
+|empty     |27     |6.32  |19       |+8.00      |
 +----------+-------+------+---------+-----------+
 
 
@@ -202,7 +191,7 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |class    |3      |3          |=          |0.00        |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|method   |58     |58         |=          |12.07       |3.45     |
+|method   |58     |58         |=          |12.07       |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |function |1      |1          |=          |0.00        |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
@@ -215,13 +204,13 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |122    |124      |-2.00      |
+|convention |118    |122      |-4.00      |
 +-----------+-------+---------+-----------+
-|refactor   |3      |3        |=          |
+|refactor   |2      |3        |-1.00      |
 +-----------+-------+---------+-----------+
-|warning    |10     |16       |-6.00      |
+|warning    |4      |10       |-6.00      |
 +-----------+-------+---------+-----------+
-|error      |1      |3        |-2.00      |
+|error      |1      |1        |=          |
 +-----------+-------+---------+-----------+
 
 
@@ -232,9 +221,9 @@ Messages by category
 +---------------------------+-------+--------+---------+-----------+
 |module                     |error  |warning |refactor |convention |
 +===========================+=======+========+=========+===========+
-|gefica.GFCInterfaceManager |100.00 |80.00   |100.00   |48.36      |
+|gefica.GFCInterfaceManager |100.00 |75.00   |100.00   |48.31      |
 +---------------------------+-------+--------+---------+-----------+
-|gefica.GFCCardsManager     |0.00   |20.00   |0.00     |26.23      |
+|gefica.GFCCardsManager     |0.00   |25.00   |0.00     |27.12      |
 +---------------------------+-------+--------+---------+-----------+
 
 
@@ -245,15 +234,13 @@ Messages
 +-----------+-----------+
 |message id |occurences |
 +===========+===========+
-|C0112      |48         |
+|C0112      |54         |
 +-----------+-----------+
 |C0301      |36         |
 +-----------+-----------+
-|C0103      |26         |
+|C0103      |22         |
 +-----------+-----------+
-|C0111      |12         |
-+-----------+-----------+
-|W0201      |7          |
+|C0111      |6          |
 +-----------+-----------+
 |W0611      |1          |
 +-----------+-----------+
@@ -261,9 +248,9 @@ Messages
 +-----------+-----------+
 |W0312      |1          |
 +-----------+-----------+
-|R0904      |1          |
+|W0201      |1          |
 +-----------+-----------+
-|R0902      |1          |
+|R0904      |1          |
 +-----------+-----------+
 |R0201      |1          |
 +-----------+-----------+
@@ -274,5 +261,5 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 5.54/10 (previous run: 5.02/10)
+Your code has been rated at 5.93/10 (previous run: 5.54/10)
 
