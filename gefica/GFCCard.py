@@ -11,7 +11,7 @@ class GFCCard:
 		self.example = "ø"
 		self.example_translation = "ø"
 
-	def PrintSelf(self):
+	def print_self(self):
 		""" """
 		print self.index
 		print self.character
@@ -20,7 +20,7 @@ class GFCCard:
 		print self.example
 		print self.example_translation
 
-	def SetCardIndex(self, i):
+	def set_card_index(self, i):
 		""" """
 		self.index = i
 
@@ -37,6 +37,7 @@ class GFCCard:
 		self.pinyin = p
 
 	def get_pinyin(self):
+		""" """
 		return self.pinyin
 
 	def set_translation(self, t):

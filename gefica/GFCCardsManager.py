@@ -11,6 +11,7 @@ class GFCCardsManager:
 		""" """
 		self.nbCards = 0
 		self.cards = []
+		self.template_path = ""
 
 	def get_nb_cards(self):
 		""" """

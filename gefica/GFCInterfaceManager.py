@@ -11,8 +11,14 @@ class GFCInterfaceManager:
 	""" """
 	def __init__(self, gladefile):
 		""" """
+		self.recent_project_files_number = 0
+		self.recent_project_files_path = []
+		self.filename = ""
+		self.project_path = ""
+
+		# Gtk stuff:
 		self.gladefile = gladefile
-		self.gladeTrees = {
+		self.glade_trees = {
 			"openFileChooserDialog" : gtk.glade.XML(self.gladefile, "openFileChooserDialog"),
 			"saveFileChooserDialog" : gtk.glade.XML(self.gladefile, "saveFileChooserDialog"),
 			"theAboutDialog" : gtk.glade.XML(self.gladefile, "theAboutDialog"),
@@ -54,8 +60,8 @@ class GFCInterfaceManager:
 
 	def __getitem__(self, key):
 		""" """
-		for gladeTree in self.gladeTrees:
-			widget = self.gladeTrees[gladeTree].get_widget(key)
+		for glade_tree in self.glade_trees:
+			widget = self.glade_trees[glade_tree].get_widget(key)
 			if(widget != None):
 				return widget
 
@@ -72,8 +78,6 @@ class GFCInterfaceManager:
 		"""Read the user configuration file if there is one, else create one."""
 		config_reader = ConfigParser.SafeConfigParser()
 		user_home = os.getenv("HOME")
-		self.recent_project_files_number = 0
-		self.recent_project_files_path = []
 		parsed_files = config_reader.read([user_home+'/.config/gefica/gefica.conf'])
 		if(parsed_files != []):
 			self.recent_project_files_number = config_reader.get("recent", "files")
@@ -143,19 +147,24 @@ class GFCInterfaceManager:
 	
 	#---
 	def cut_activate_cb(self, item):
+		""" """
 		pass
 
 	def copy_activate_cb(self, item):
+		""" """
 		pass
 
 	def paste_activate_cb(self, item):
+		""" """
 		pass
 
 	def delete_activate_cb(self, item):
+		""" """
 		pass
 
 	#---
 	def new_card_cb(self, item):
+		""" """
 		index = self.cards_manager.add_card()
 		self.__getitem__("goComboBox").append_text(self.cards_manager.get_card_character(index))
 		self.update_interface(index)
@@ -241,13 +250,13 @@ class GFCInterfaceManager:
 		""" """
 		index = self.__getitem__("goComboBox").get_active()
 		if index > -1 and os.path.exists(self.project_path+"/card_"+str(index)+".pdf"):
-			self.pdf = poppler.document_new_from_file ("file://"+self.project_path+"/card_"+str(index)+".pdf", None)
-			width, height = self.pdf.get_page(0).get_size()
+			pdf = poppler.document_new_from_file ("file://"+self.project_path+"/card_"+str(index)+".pdf", None)
+			width, height = pdf.get_page(0).get_size()
 			widget.set_size_request(int(width), int(height))
 			cairo_renderer = widget.window.cairo_create()
 			cairo_renderer.set_source_rgb(1, 1, 1)
         		cairo_renderer.scale(1, 1)
 			cairo_renderer.rectangle(0, 0, width, height)
 			cairo_renderer.fill()
-			self.pdf.get_page(0).render(cairo_renderer)
+			pdf.get_page(0).render(cairo_renderer)
 
