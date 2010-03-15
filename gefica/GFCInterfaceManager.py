@@ -29,7 +29,7 @@ class GFCInterfaceManager:
 		#---
 		self.__getitem__("cutImageMenuItem").connect("activate", self.cut_activate_cb)
 		self.__getitem__("copyImageMenuItem").connect("activate", self.copy_activate_cb)
-		self.__getitem__("pasteImageMenuItem").connect("activate",self.paste_activate_cb)
+		self.__getitem__("pasteImageMenuItem").connect("activate", self.paste_activate_cb)
 		self.__getitem__("deleteImageMenuItem").connect("activate", self.delete_activate_cb)
 		#---
 		self.__getitem__("newcardImageMenuItem").connect("activate", self.new_card_cb)
@@ -111,7 +111,6 @@ class GFCInterfaceManager:
 	def new_project_cb(self, item):
 		""" """
 		self.cards_manager.reset()
-		pass
 
 	def open_project_cb(self, item):
 		""" """

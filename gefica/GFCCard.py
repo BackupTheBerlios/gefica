@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import gtk
-
 class GFCCard:
 	""" """
 	def __init__(self, cardindex):
@@ -12,7 +10,6 @@ class GFCCard:
 		self.translation = "ø"
 		self.example = "ø"
 		self.example_translation = "ø"
-		pass
 
 	def PrintSelf(self):
 		""" """
@@ -66,4 +63,3 @@ class GFCCard:
 		""" """
 		return self.example_translation
 
-	pass
