@@ -18,39 +18,7 @@ C: 55:GFCCard.get_example: Empty docstring
 C: 59:GFCCard.set_example_translation: Empty docstring
 C: 63:GFCCard.get_example_translation: Empty docstring
 ************* Module gefica.GFCInterfaceManager
-C: 22: Line too long (84/80)
-C: 23: Line too long (84/80)
-C: 31: Line too long (81/80)
-C: 32: Line too long (81/80)
-C: 33: Line too long (86/80)
-C: 37: Line too long (82/80)
-C: 38: Line too long (84/80)
-C: 39: Line too long (86/80)
-C: 43: Line too long (82/80)
-C: 45: Line too long (97/80)
-C: 46: Line too long (86/80)
-C: 49: Line too long (87/80)
-C: 55: Line too long (94/80)
-C: 73: Line too long (108/80)
-C: 85: Line too long (82/80)
-C: 96: Line too long (88/80)
-C: 98: Line too long (91/80)
-C:105: Line too long (180/80)
-C:106: Line too long (91/80)
-C:107: Line too long (85/80)
-C:108: Line too long (95/80)
-C:109: Line too long (87/80)
-C:110: Line too long (110/80)
-C:169: Line too long (90/80)
-C:209: Line too long (93/80)
-C:210: Line too long (87/80)
-C:211: Line too long (97/80)
-C:212: Line too long (89/80)
-C:213: Line too long (112/80)
-C:222: Line too long (145/80)
-C:240: Line too long (88/80)
-C:252: Line too long (81/80)
-C:253: Line too long (102/80)
+C:105: Line too long (180/150)
 C:  1: Missing docstring
 C: 10:GFCInterfaceManager: Empty docstring
 C: 93:GFCInterfaceManager.init_interface: Empty docstring
@@ -79,9 +47,6 @@ R: 10:GFCInterfaceManager: Too many public methods (23/20)
 W: 70:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
 W:  6: Unused import cairo
 ************* Module gefica.GFCCardsManager
-C: 92: Line too long (84/80)
-C:106: Line too long (96/80)
-C:133: Line too long (105/80)
 C:  1: Missing docstring
 W:  4: Uses of a deprecated module 'string'
 C:  8:GFCCardsManager: Empty docstring
@@ -181,11 +146,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |96     |118      |-22.00     |
+|convention |61     |96       |-35.00     |
 +-----------+-------+---------+-----------+
 |refactor   |2      |2        |=          |
 +-----------+-------+---------+-----------+
-|warning    |3      |4        |-1.00      |
+|warning    |3      |3        |=          |
 +-----------+-------+---------+-----------+
 |error      |1      |1        |=          |
 +-----------+-------+---------+-----------+
@@ -198,9 +163,9 @@ Messages by category
 +---------------------------+-------+--------+---------+-----------+
 |module                     |error  |warning |refactor |convention |
 +===========================+=======+========+=========+===========+
-|gefica.GFCInterfaceManager |100.00 |66.67   |100.00   |57.29      |
+|gefica.GFCInterfaceManager |100.00 |66.67   |100.00   |37.70      |
 +---------------------------+-------+--------+---------+-----------+
-|gefica.GFCCardsManager     |0.00   |33.33   |0.00     |25.00      |
+|gefica.GFCCardsManager     |0.00   |33.33   |0.00     |34.43      |
 +---------------------------+-------+--------+---------+-----------+
 
 
@@ -212,8 +177,6 @@ Messages
 |message id |occurences |
 +===========+===========+
 |C0112      |54         |
-+-----------+-----------+
-|C0301      |36         |
 +-----------+-----------+
 |C0111      |6          |
 +-----------+-----------+
@@ -229,10 +192,12 @@ Messages
 +-----------+-----------+
 |E1101      |1          |
 +-----------+-----------+
+|C0301      |1          |
++-----------+-----------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at 6.66/10 (previous run: 5.93/10)
+Your code has been rated at 7.76/10 (previous run: 6.66/10)
 
