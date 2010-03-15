@@ -9,9 +9,8 @@ import os.path
 sys.path.append(os.path.abspath('./gefica'))
 
 # Import of the main classes:
-from GFCCard import *
-from GFCCardsManager import *
-from GFCInterfaceManager import *
+from gefica.GFCCardsManager import GFCCardsManager
+from gefica.GFCInterfaceManager import GFCInterfaceManager
 
 def main():
 	im = GFCInterfaceManager('gefica/glade/interface.glade')

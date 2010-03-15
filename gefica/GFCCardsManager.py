@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import gtk
 import ConfigParser, os
 import string
 
-from GFCCard import *
+from gefica.GFCCard import GFCCard
 
 class GFCCardsManager:
 	""" """
@@ -12,7 +11,6 @@ class GFCCardsManager:
 		""" """
 		self.nbCards = 0
 		self.cards = []
-		pass
 
 	def get_nb_cards(self):
 		""" """
@@ -62,7 +60,7 @@ class GFCCardsManager:
 		""" """
 		c = GFCCard(self.nbCards)
 		self.cards.append(c)
-		self.nbCards+=1
+		self.nbCards += 1
 		return c
 
 	def add_card(self):
@@ -84,7 +82,7 @@ class GFCCardsManager:
 		cards_reader.read([cf])
 		nbcards = cards_reader.getint("infos", "nbcards")
 		self.template_path = cards_reader.get("infos", "template")
-		for index in range(0,nbcards):
+		for index in range(0, nbcards):
 			card = self.create_card()
 			card.set_character(cards_reader.get(str(index), "character"))
 			card.set_pinyin(cards_reader.get(str(index), "pinyin"))

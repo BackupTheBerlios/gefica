@@ -211,13 +211,13 @@ class GFCInterfaceManager:
 		self.cards_manager.generate_svg(self.project_path)
 		self.cards_manager.generate_pdf(self.project_path)
 		self.__getitem__("popupMessageDialog").format_secondary_text("Les fiches ont été générées à l'emplacement suivant :\n"+self.project_path)
-		response = self.__getitem__("popupMessageDialog").run()
+		self.__getitem__("popupMessageDialog").run()
 		self.__getitem__("popupMessageDialog").hide()
 
 	#---
 	def show_about_dialog_cb(self, item):
 		""" """
-		response = self.__getitem__("theAboutDialog").run()
+		self.__getitem__("theAboutDialog").run()
 		self.__getitem__("theAboutDialog").hide()
 
 	#---
