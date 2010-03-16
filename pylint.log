@@ -48,32 +48,31 @@ W: 70:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defi
 W:  6: Unused import cairo
 ************* Module gefica.GFCCardsManager
 C:  1: Missing docstring
-W:  4: Uses of a deprecated module 'string'
-C:  8:GFCCardsManager: Empty docstring
-C: 16:GFCCardsManager.get_nb_cards: Empty docstring
-C: 20:GFCCardsManager.get_card_character: Empty docstring
-C: 24:GFCCardsManager.get_card_pinyin: Empty docstring
-C: 28:GFCCardsManager.get_card_translation: Empty docstring
-C: 32:GFCCardsManager.get_card_example: Empty docstring
-C: 36:GFCCardsManager.get_card_example_translation: Empty docstring
-C: 40:GFCCardsManager.set_card_character: Empty docstring
-C: 44:GFCCardsManager.set_card_pinyin: Empty docstring
-C: 48:GFCCardsManager.set_card_translation: Empty docstring
-C: 52:GFCCardsManager.set_card_example: Empty docstring
-C: 56:GFCCardsManager.set_card_example_translation: Empty docstring
-C: 60:GFCCardsManager.create_card: Empty docstring
-C: 67:GFCCardsManager.add_card: Empty docstring
-C: 72:GFCCardsManager.reset: Empty docstring
-C: 76:GFCCardsManager.set_template_file: Empty docstring
-C: 80:GFCCardsManager.read_cards_from_file: Empty docstring
-C: 94:GFCCardsManager.write_cards_into_file: Empty docstring
-C:112:GFCCardsManager.generate_svg: Empty docstring
-C:130:GFCCardsManager.generate_pdf: Empty docstring
+C:  7:GFCCardsManager: Empty docstring
+C: 15:GFCCardsManager.get_nb_cards: Empty docstring
+C: 19:GFCCardsManager.get_card_character: Empty docstring
+C: 23:GFCCardsManager.get_card_pinyin: Empty docstring
+C: 27:GFCCardsManager.get_card_translation: Empty docstring
+C: 31:GFCCardsManager.get_card_example: Empty docstring
+C: 35:GFCCardsManager.get_card_example_translation: Empty docstring
+C: 39:GFCCardsManager.set_card_character: Empty docstring
+C: 43:GFCCardsManager.set_card_pinyin: Empty docstring
+C: 47:GFCCardsManager.set_card_translation: Empty docstring
+C: 51:GFCCardsManager.set_card_example: Empty docstring
+C: 55:GFCCardsManager.set_card_example_translation: Empty docstring
+C: 59:GFCCardsManager.create_card: Empty docstring
+C: 66:GFCCardsManager.add_card: Empty docstring
+C: 71:GFCCardsManager.reset: Empty docstring
+C: 75:GFCCardsManager.set_template_file: Empty docstring
+C: 79:GFCCardsManager.read_cards_from_file: Empty docstring
+C: 93:GFCCardsManager.write_cards_into_file: Empty docstring
+C:111:GFCCardsManager.generate_svg: Empty docstring
+C:128:GFCCardsManager.generate_pdf: Empty docstring
 
 
 Report
 ======
-317 statements analysed.
+315 statements analysed.
 
 Duplication
 -----------
@@ -94,13 +93,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |317    |74.24 |317      |=          |
+|code      |315    |74.12 |317      |-2.00      |
 +----------+-------+------+---------+-----------+
-|docstring |66     |15.46 |66       |=          |
+|docstring |66     |15.53 |66       |=          |
 +----------+-------+------+---------+-----------+
-|comment   |17     |3.98  |17       |=          |
+|comment   |17     |4.00  |17       |=          |
 +----------+-------+------+---------+-----------+
-|empty     |27     |6.32  |27       |=          |
+|empty     |27     |6.35  |27       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -146,11 +145,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |61     |96       |-35.00     |
+|convention |61     |61       |=          |
 +-----------+-------+---------+-----------+
 |refactor   |2      |2        |=          |
 +-----------+-------+---------+-----------+
-|warning    |3      |3        |=          |
+|warning    |2      |3        |-1.00      |
 +-----------+-------+---------+-----------+
 |error      |1      |1        |=          |
 +-----------+-------+---------+-----------+
@@ -163,9 +162,7 @@ Messages by category
 +---------------------------+-------+--------+---------+-----------+
 |module                     |error  |warning |refactor |convention |
 +===========================+=======+========+=========+===========+
-|gefica.GFCInterfaceManager |100.00 |66.67   |100.00   |37.70      |
-+---------------------------+-------+--------+---------+-----------+
-|gefica.GFCCardsManager     |0.00   |33.33   |0.00     |34.43      |
+|gefica.GFCInterfaceManager |100.00 |100.00  |100.00   |37.70      |
 +---------------------------+-------+--------+---------+-----------+
 
 
@@ -182,8 +179,6 @@ Messages
 +-----------+-----------+
 |W0611      |1          |
 +-----------+-----------+
-|W0402      |1          |
-+-----------+-----------+
 |W0201      |1          |
 +-----------+-----------+
 |R0904      |1          |
@@ -199,5 +194,5 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 7.76/10 (previous run: 6.66/10)
+Your code has been rated at 7.78/10 (previous run: 7.76/10)
 
