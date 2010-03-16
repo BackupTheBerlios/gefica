@@ -13,6 +13,7 @@ from gefica.GFCCardsManager import GFCCardsManager
 from gefica.GFCInterfaceManager import GFCInterfaceManager
 
 def main():
+	"""Application start point. Initializes managers instances and lauch the event loop."""
 	interface_manager = GFCInterfaceManager('gefica/glade/interface.glade')
 	cards_manager = GFCCardsManager()
 	interface_manager.register_cards_manager(cards_manager)

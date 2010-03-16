@@ -142,7 +142,7 @@ class GFCInterfaceManager:
 			self.save_project_cb(item)
 
 	def quit_cb(self, item):
-		""" """
+		"""Quit callback"""
 		gtk.main_quit()
 	
 	#---
@@ -225,23 +225,23 @@ class GFCInterfaceManager:
 
 	#---
 	def show_about_dialog_cb(self, item):
-		""" """
+		"""Show the about dialog."""
 		self.__getitem__("theAboutDialog").run()
 		self.__getitem__("theAboutDialog").hide()
 
 	#---
 	def go_to_previous_cb(self, item):
-		""" """
+		"""Previous button callback"""
 		if self.__getitem__("goComboBox").get_active() > 0:
 			self.update_interface(self.__getitem__("goComboBox").get_active()-1)
 
 	def go_to_next_cb(self, item):
-		""" """
+		"""Next button callback"""
 		if self.__getitem__("goComboBox").get_active() < self.cards_manager.get_nb_cards() -1:
 			self.update_interface(self.__getitem__("goComboBox").get_active()+1)
 
 	def go_cb(self, item):
-		""" """
+		"""Combo box callback"""
 		if self.__getitem__("goComboBox").get_active() > -1:
 			self.update_interface(self.__getitem__("goComboBox").get_active())
 
