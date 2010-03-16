@@ -1,23 +1,15 @@
 ************* Module gefica
 C:  1: Missing docstring
-C:  1: Missing docstring
-************* Module gefica.GFCCard
-C:  1: Missing docstring
 ************* Module gefica.GFCInterfaceManager
-C:106: Line too long (180/150)
-C:  1: Missing docstring
-E:134:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
-R:145:GFCInterfaceManager.quit_cb: Method could be a function
+E:135:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
+R:146:GFCInterfaceManager.quit_cb: Method could be a function
 R: 10:GFCInterfaceManager: Too many public methods (23/20)
 W: 71:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
-W:  6: Unused import cairo
-************* Module gefica.GFCCardsManager
-C:  1: Missing docstring
 
 
 Report
 ======
-315 statements analysed.
+314 statements analysed.
 
 Duplication
 -----------
@@ -38,13 +30,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |315    |73.94 |315      |=          |
+|code      |314    |73.71 |315      |-1.00      |
 +----------+-------+------+---------+-----------+
-|docstring |67     |15.73 |67       |=          |
+|docstring |72     |16.90 |67       |+5.00      |
 +----------+-------+------+---------+-----------+
 |comment   |17     |3.99  |17       |=          |
 +----------+-------+------+---------+-----------+
-|empty     |27     |6.34  |27       |=          |
+|empty     |23     |5.40  |27       |-4.00      |
 +----------+-------+------+---------+-----------+
 
 
@@ -53,7 +45,6 @@ External dependencies
 ---------------------
 ::
 
-    cairo (gefica.GFCInterfaceManager)
     gefica 
       \-GFCCard 
       | \-GFCCard (gefica.GFCCardsManager)
@@ -73,7 +64,7 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |type     |number |old number |difference |%documented |%badname |
 +=========+=======+===========+===========+============+=========+
-|module   |5      |5          |=          |0.00        |0.00     |
+|module   |5      |5          |=          |80.00       |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |class    |3      |3          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
@@ -90,11 +81,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |6      |35       |-29.00     |
+|convention |1      |6        |-5.00      |
 +-----------+-------+---------+-----------+
 |refactor   |2      |2        |=          |
 +-----------+-------+---------+-----------+
-|warning    |2      |2        |=          |
+|warning    |1      |2        |-1.00      |
 +-----------+-------+---------+-----------+
 |error      |1      |1        |=          |
 +-----------+-------+---------+-----------+
@@ -107,7 +98,7 @@ Messages by category
 +---------------------------+-------+--------+---------+-----------+
 |module                     |error  |warning |refactor |convention |
 +===========================+=======+========+=========+===========+
-|gefica.GFCInterfaceManager |100.00 |100.00  |100.00   |33.33      |
+|gefica.GFCInterfaceManager |100.00 |100.00  |100.00   |0.00       |
 +---------------------------+-------+--------+---------+-----------+
 
 
@@ -118,10 +109,6 @@ Messages
 +-----------+-----------+
 |message id |occurences |
 +===========+===========+
-|C0111      |5          |
-+-----------+-----------+
-|W0611      |1          |
-+-----------+-----------+
 |W0201      |1          |
 +-----------+-----------+
 |R0904      |1          |
@@ -130,12 +117,12 @@ Messages
 +-----------+-----------+
 |E1101      |1          |
 +-----------+-----------+
-|C0301      |1          |
+|C0111      |1          |
 +-----------+-----------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at 9.52/10 (previous run: 8.60/10)
+Your code has been rated at 9.71/10 (previous run: 9.52/10)
 
