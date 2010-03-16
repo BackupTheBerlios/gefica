@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""GFCCard.py (©2005-2010 Romain Ballais <rballais@users.berlios.de> - See LICENSE file for licence information.)"""
 
 class GFCCard:
 	"""Card class: store data matching a card element."""

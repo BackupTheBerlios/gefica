@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
+"""GFCInterfaceManager.py (©2005-2010 Romain Ballais <rballais@users.berlios.de> - See LICENSE file for licence information.)"""
 
 import gtk
 import gtk.glade
 import poppler
-import cairo
 
 import ConfigParser, os
 
@@ -103,7 +103,8 @@ class GFCInterfaceManager:
 	def update_interface(self, index):
 		"""Update the text fields and the preview area."""
 		self.__getitem__("goComboBox").set_active(index)
-		self.__getitem__("mainStatusBar").push(self.__getitem__("mainStatusBar").get_context_id("displayed character"), "Fiche affichée : "+self.cards_manager.get_card_character(index))
+		self.__getitem__("mainStatusBar").push(	self.__getitem__("mainStatusBar").get_context_id("displayed character"),
+							"Fiche affichée : "+self.cards_manager.get_card_character(index))
 		self.__getitem__("characterEntry").set_text(self.cards_manager.get_card_character(index))
 		self.__getitem__("pinyinEntry").set_text(self.cards_manager.get_card_pinyin(index))
 		self.__getitem__("translationEntry").set_text(self.cards_manager.get_card_translation(index))
