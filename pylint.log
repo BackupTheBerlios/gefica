@@ -3,42 +3,13 @@ C:  1: Missing docstring
 C:  1: Missing docstring
 ************* Module gefica.GFCCard
 C:  1: Missing docstring
-C:  3:GFCCard: Empty docstring
-C: 14:GFCCard.print_self: Empty docstring
-C: 23:GFCCard.set_card_index: Empty docstring
-C: 27:GFCCard.set_character: Empty docstring
-C: 31:GFCCard.get_character: Empty docstring
-C: 35:GFCCard.set_pinyin: Empty docstring
-C: 39:GFCCard.get_pinyin: Empty docstring
-C: 43:GFCCard.set_translation: Empty docstring
-C: 47:GFCCard.get_translation: Empty docstring
-C: 51:GFCCard.set_example: Empty docstring
-C: 55:GFCCard.get_example: Empty docstring
-C: 59:GFCCard.set_example_translation: Empty docstring
-C: 63:GFCCard.get_example_translation: Empty docstring
 ************* Module gefica.GFCInterfaceManager
-C:105: Line too long (180/150)
+C:106: Line too long (180/150)
 C:  1: Missing docstring
-C: 10:GFCInterfaceManager: Empty docstring
-C: 93:GFCInterfaceManager.init_interface: Empty docstring
-C:102:GFCInterfaceManager.update_interface: Empty docstring
-C:115:GFCInterfaceManager.new_project_cb: Empty docstring
-C:119:GFCInterfaceManager.open_project_cb: Empty docstring
-C:130:GFCInterfaceManager.save_project_cb: Empty docstring
-E:133:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
-C:136:GFCInterfaceManager.save_project_as_cb: Empty docstring
-R:144:GFCInterfaceManager.quit_cb: Method could be a function
-C:149:GFCInterfaceManager.cut_activate_cb: Empty docstring
-C:153:GFCInterfaceManager.copy_activate_cb: Empty docstring
-C:157:GFCInterfaceManager.paste_activate_cb: Empty docstring
-C:161:GFCInterfaceManager.delete_activate_cb: Empty docstring
-C:166:GFCInterfaceManager.new_card_cb: Empty docstring
-C:172:GFCInterfaceManager.edit_card_cb: Empty docstring
-C:190:GFCInterfaceManager.apply_card_modification_cb: Empty docstring
-C:218:GFCInterfaceManager.generate_pdf_cb: Empty docstring
-C:249:GFCInterfaceManager.preview_expose_event_cb: Empty docstring
+E:134:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
+R:145:GFCInterfaceManager.quit_cb: Method could be a function
 R: 10:GFCInterfaceManager: Too many public methods (23/20)
-W: 70:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
+W: 71:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
 W:  6: Unused import cairo
 ************* Module gefica.GFCCardsManager
 C:  1: Missing docstring
@@ -69,7 +40,7 @@ Raw metrics
 +==========+=======+======+=========+===========+
 |code      |315    |73.94 |315      |=          |
 +----------+-------+------+---------+-----------+
-|docstring |67     |15.73 |66       |+1.00      |
+|docstring |67     |15.73 |67       |=          |
 +----------+-------+------+---------+-----------+
 |comment   |17     |3.99  |17       |=          |
 +----------+-------+------+---------+-----------+
@@ -104,9 +75,9 @@ Statistics by type
 +=========+=======+===========+===========+============+=========+
 |module   |5      |5          |=          |0.00        |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|class    |3      |3          |=          |33.33       |0.00     |
+|class    |3      |3          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|method   |58     |58         |=          |53.45       |0.00     |
+|method   |58     |58         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |function |1      |1          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
@@ -119,7 +90,7 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |35     |61       |-26.00     |
+|convention |6      |35       |-29.00     |
 +-----------+-------+---------+-----------+
 |refactor   |2      |2        |=          |
 +-----------+-------+---------+-----------+
@@ -136,7 +107,7 @@ Messages by category
 +---------------------------+-------+--------+---------+-----------+
 |module                     |error  |warning |refactor |convention |
 +===========================+=======+========+=========+===========+
-|gefica.GFCInterfaceManager |100.00 |100.00  |100.00   |51.43      |
+|gefica.GFCInterfaceManager |100.00 |100.00  |100.00   |33.33      |
 +---------------------------+-------+--------+---------+-----------+
 
 
@@ -147,8 +118,6 @@ Messages
 +-----------+-----------+
 |message id |occurences |
 +===========+===========+
-|C0112      |29         |
-+-----------+-----------+
 |C0111      |5          |
 +-----------+-----------+
 |W0611      |1          |
@@ -168,5 +137,5 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 8.60/10 (previous run: 7.78/10)
+Your code has been rated at 9.52/10 (previous run: 8.60/10)
 
