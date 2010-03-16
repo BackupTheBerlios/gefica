@@ -27,14 +27,14 @@
 			xml:space="preserve"
 			style="	font-size:144px;
 					text-anchor:middle;
-					font-family:AR PL UKai CN">$character</text>
+					font-family:AR PL UKai CN">%(character)s</text>
 		<text
 			x="177"
 			y="200"
 			xml:space="preserve"
 			style="	font-size:40px;
 					text-anchor:middle;
-					font-family:AR PL UKai CN">$pinyin</text>
+					font-family:AR PL UKai CN">%(pinyin)s</text>
 		<text
 			x="177"
 			y="220"
@@ -42,21 +42,21 @@
 			style="	font-size:18px;
 					font-style:italic;
 					text-anchor:middle;
-					font-family:AR PL UKai CN">$translation</text>
+					font-family:AR PL UKai CN">%(translation)s</text>
 		<text
 			x="20"
 			y="275"
 			xml:space="preserve"
 			style="	font-size:18px;
 					text-anchor:start;
-					font-family:AR PL UKai CN">$example</text>
+					font-family:AR PL UKai CN">%(example)s</text>
 		<text
 			x="20"
 			y="300"
 			xml:space="preserve"
 			style="	font-size:18px;
 					text-anchor:start;
-					font-family:AR PL UKai CN">$example_translation</text>
+					font-family:AR PL UKai CN">%(example_translation)s</text>
 		<path
 			d="M 50,240 L 295,240"
 			style="	fill:#000000;

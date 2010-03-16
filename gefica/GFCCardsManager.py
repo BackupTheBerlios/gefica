@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import ConfigParser, os
-import string
 
 from gefica.GFCCard import GFCCard
 
@@ -81,7 +80,7 @@ class GFCCardsManager:
 		""" """
 		cards_reader = ConfigParser.SafeConfigParser()
 		cards_reader.read([cards_file])
-		nb_cards = cards_reader.getint("infos", "nb_cards")
+		nb_cards = cards_reader.getint("infos", "nbCards")
 		self.template_path = cards_reader.get("infos", "template")
 		for index in range(0, nb_cards):
 			card = self.create_card()
@@ -115,7 +114,6 @@ class GFCCardsManager:
 		svgtemplatestring = svgtemplate.read()
 		svgtemplate.close()
 		for index in range(0, self.nb_cards):
-			svgcode = string.Template(svgtemplatestring)
 			data = dict()
 			data["character"] = self.get_card_character(index)
 			data["pinyin"] = self.get_card_pinyin(index)
@@ -124,7 +122,7 @@ class GFCCardsManager:
 			data["example"] = self.get_card_example(index)
 			os.popen('touch '+path+'/card_'+str(index)+'.svg').read()
 			filehandle = open(path+'/card_'+str(index)+'.svg', 'w')
-			filehandle.write(svgcode.substitute(data))
+			filehandle.write(svgtemplatestring % data)
 			filehandle.close()
 			
 	def generate_pdf(self, path):
