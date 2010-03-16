@@ -8,9 +8,10 @@ import cairo
 import ConfigParser, os
 
 class GFCInterfaceManager:
-	""" """
+	"""Interface manager: manage all interface elements, callbacks and user interactions."""
+
 	def __init__(self, gladefile):
-		""" """
+		"""Class initializer: initialize internal data, create interface from Glade file, associate callbacks with graphical elements."""
 		self.recent_project_files_number = 0
 		self.recent_project_files_path = []
 		self.filename = ""
@@ -59,7 +60,7 @@ class GFCInterfaceManager:
 		self.__getitem__("mainWindow").show()
 
 	def __getitem__(self, key):
-		""" """
+		"""Return the widget matching the given name."""
 		for glade_tree in self.glade_trees:
 			widget = self.glade_trees[glade_tree].get_widget(key)
 			if(widget != None):
@@ -91,7 +92,7 @@ class GFCInterfaceManager:
 			os.system("echo files: 0 >> "+user_home+"/.config/gefica/gefica.conf")
 
 	def init_interface(self):
-		""" """
+		"""Initialize interface. Update the combobox data."""
 		for index in range(self.cards_manager.get_nb_cards()):
 			self.__getitem__("goComboBox").remove_text(self.cards_manager.get_nb_cards()-index-1)
 		for index in range(self.cards_manager.get_nb_cards()):
@@ -100,7 +101,7 @@ class GFCInterfaceManager:
 			self.update_interface(0)
 
 	def update_interface(self, index):
-		""" """
+		"""Update the text fields and the preview area."""
 		self.__getitem__("goComboBox").set_active(index)
 		self.__getitem__("mainStatusBar").push(self.__getitem__("mainStatusBar").get_context_id("displayed character"), "Fiche affichée : "+self.cards_manager.get_card_character(index))
 		self.__getitem__("characterEntry").set_text(self.cards_manager.get_card_character(index))
@@ -113,11 +114,11 @@ class GFCInterfaceManager:
 	# Callbacks definitions:
 	#---
 	def new_project_cb(self, item):
-		""" """
+		"""New project callback."""
 		self.cards_manager.reset()
 
 	def open_project_cb(self, item):
-		""" """
+		"""Open project callback. Call the cards manager, set some internal data."""
 		response = self.__getitem__("openFileChooserDialog").run()
 		self.__getitem__("openFileChooserDialog").hide()
 		if response == gtk.RESPONSE_OK:
@@ -128,13 +129,13 @@ class GFCInterfaceManager:
 			self.project_path = self.filename.rsplit('/', 1)[0]
 
 	def save_project_cb(self, item):
-		""" """
+		"""Store the project file."""
 		if self.filename == None:
 			self.saveas_project_cb(item)
 		self.cards_manager.write_cards_into_file(self.filename)
 
 	def save_project_as_cb(self, item):
-		""" """
+		"""Store the project file with an other name."""
 		response = self.__getitem__("saveFileChooserDialog").run()
 		self.__getitem__("saveFileChooserDialog").hide()
 		if response == gtk.RESPONSE_OK:
@@ -147,30 +148,30 @@ class GFCInterfaceManager:
 	
 	#---
 	def cut_activate_cb(self, item):
-		""" """
+		"""Cut callback"""
 		pass
 
 	def copy_activate_cb(self, item):
-		""" """
+		"""Copy callback"""
 		pass
 
 	def paste_activate_cb(self, item):
-		""" """
+		"""Paste callback"""
 		pass
 
 	def delete_activate_cb(self, item):
-		""" """
+		"""Delete callback"""
 		pass
 
 	#---
 	def new_card_cb(self, item):
-		""" """
+		"""New card callback: ask the cards manager to create a new card, update the interface."""
 		index = self.cards_manager.add_card()
 		self.__getitem__("goComboBox").append_text(self.cards_manager.get_card_character(index))
 		self.update_interface(index)
 
 	def edit_card_cb(self, item):
-		""" """
+		"""Set text fields sensitive and editable."""
 		self.__getitem__("characterEntry").set_sensitive(True)
 		self.__getitem__("pinyinEntry").set_sensitive(True)
 		self.__getitem__("translationEntry").set_sensitive(True)
@@ -188,7 +189,7 @@ class GFCInterfaceManager:
 		self.__getitem__("translated_exampleEntry").set_editable(True)
 
 	def apply_card_modification_cb(self, item):
-		""" """
+		"""Set text fields insensitive and not editable. Transmit card data to the cards manager."""
 		self.__getitem__("characterEntry").set_sensitive(False)
 		self.__getitem__("pinyinEntry").set_sensitive(False)
 		self.__getitem__("translationEntry").set_sensitive(False)
@@ -216,7 +217,7 @@ class GFCInterfaceManager:
 
 
 	def generate_pdf_cb(self, item):
-		""" """
+		"""Generate PDF callback: ask the cards manager to generate SVG and PDF files."""
 		self.cards_manager.generate_svg(self.project_path)
 		self.cards_manager.generate_pdf(self.project_path)
 		self.__getitem__("popupMessageDialog").format_secondary_text("Les fiches ont été générées à l'emplacement suivant :\n"+self.project_path)
@@ -247,7 +248,7 @@ class GFCInterfaceManager:
 
 	#---
 	def preview_expose_event_cb(self, widget, event):
-		""" """
+		"""Expose event callback: update the preview area."""
 		index = self.__getitem__("goComboBox").get_active()
 		if index > -1 and os.path.exists(self.project_path+"/card_"+str(index)+".pdf"):
 			pdf = poppler.document_new_from_file ("file://"+self.project_path+"/card_"+str(index)+".pdf", None)

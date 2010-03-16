@@ -6,6 +6,7 @@ from gefica.GFCCard import GFCCard
 
 class GFCCardsManager:
 	"""Cards manager: store and manage data (cards, project data). Convert data into final format."""
+
 	def __init__(self):
 		"""Class initializer"""
 		self.nb_cards = 0
