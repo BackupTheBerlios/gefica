@@ -3,11 +3,8 @@
 """gefica.py (©2005-2010 Romain Ballais <rballais@users.berlios.de> - See LICENSE file for licence information.)"""
 
 import gtk
-import sys
 
 # Import of the main classes:
-import gefica
-from gefica import GFCCard
 from gefica import GFCCardsManager
 from gefica import GFCInterfaceManager
 

@@ -1,27 +1,16 @@
-************* Module gefica
-W:  9: Module import itself
-W:  6: Unused import sys
-W:  9: Unused import gefica
-W: 10: Unused import GFCCard
-W:  9: Module import itself
-W:  6: Unused import sys
-W:  9: Unused import gefica
-W: 10: Unused import GFCCard
 ************* Module gefica.GFCInterfaceManager
 E:135:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
 R:146:GFCInterfaceManager.quit_cb: Method could be a function
 R: 10:GFCInterfaceManager: Too many public methods (23/20)
 W: 71:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
 ************* Module gefica.GFCCardsManager
+E:  6: No name 'GFCCard' in module 'gefica'
 R:  1: Similar lines in 2 files
 ==gefica:4
 ==gefica:4
 import gtk
-import sys
 
 # Import of the main classes:
-import gefica
-from gefica import GFCCard
 from gefica import GFCCardsManager
 from gefica import GFCInterfaceManager
 
@@ -42,7 +31,7 @@ if __name__ == '__main__':
 
 Report
 ======
-329 statements analysed.
+323 statements analysed.
 
 Duplication
 -----------
@@ -50,9 +39,9 @@ Duplication
 +-------------------------+------+---------+-----------+
 |                         |now   |previous |difference |
 +=========================+======+=========+===========+
-|nb duplicated lines      |22    |0        |+22.00     |
+|nb duplicated lines      |19    |22       |-3.00      |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |4.239 |0.000    |+4.24      |
+|percent duplicated lines |3.704 |4.239    |-0.54      |
 +-------------------------+------+---------+-----------+
 
 
@@ -63,13 +52,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |328    |73.38 |320      |+8.00      |
+|code      |322    |73.02 |328      |-6.00      |
 +----------+-------+------+---------+-----------+
-|docstring |74     |16.55 |73       |+1.00      |
+|docstring |74     |16.78 |74       |=          |
 +----------+-------+------+---------+-----------+
-|comment   |20     |4.47  |17       |+3.00      |
+|comment   |20     |4.54  |20       |=          |
 +----------+-------+------+---------+-----------+
-|empty     |25     |5.59  |23       |+2.00      |
+|empty     |25     |5.67  |25       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -99,7 +88,7 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |method   |58     |58         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|function |2      |1          |+1.00      |100.00      |0.00     |
+|function |2      |2          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 
 
@@ -112,11 +101,11 @@ Messages by category
 +===========+=======+=========+===========+
 |convention |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|refactor   |3      |2        |+1.00      |
+|refactor   |3      |3        |=          |
 +-----------+-------+---------+-----------+
-|warning    |9      |5        |+4.00      |
+|warning    |1      |9        |-8.00      |
 +-----------+-------+---------+-----------+
-|error      |1      |1        |=          |
+|error      |2      |1        |+1.00      |
 +-----------+-------+---------+-----------+
 
 
@@ -124,13 +113,13 @@ Messages by category
 % errors / warnings by module
 -----------------------------
 
-+---------------------------+-------+--------+---------+-----------+
-|module                     |error  |warning |refactor |convention |
-+===========================+=======+========+=========+===========+
-|gefica.GFCInterfaceManager |100.00 |11.11   |66.67    |0.00       |
-+---------------------------+-------+--------+---------+-----------+
-|gefica                     |0.00   |44.44   |0.00     |0.00       |
-+---------------------------+-------+--------+---------+-----------+
++---------------------------+------+--------+---------+-----------+
+|module                     |error |warning |refactor |convention |
++===========================+======+========+=========+===========+
+|gefica.GFCInterfaceManager |50.00 |100.00  |66.67    |0.00       |
++---------------------------+------+--------+---------+-----------+
+|gefica.GFCCardsManager     |50.00 |0.00    |33.33    |0.00       |
++---------------------------+------+--------+---------+-----------+
 
 
 
@@ -140,10 +129,6 @@ Messages
 +-----------+------------+
 |message id |occurrences |
 +===========+============+
-|W0611      |6           |
-+-----------+------------+
-|W0406      |2           |
-+-----------+------------+
 |W0201      |1           |
 +-----------+------------+
 |R0904      |1           |
@@ -154,10 +139,12 @@ Messages
 +-----------+------------+
 |E1101      |1           |
 +-----------+------------+
+|E0611      |1           |
++-----------+------------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at 9.48/10 (previous run: 9.62/10)
+Your code has been rated at 9.57/10 (previous run: 9.48/10)
 

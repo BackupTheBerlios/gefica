@@ -12,6 +12,7 @@ class GFCInterfaceManager:
 
 	def __init__(self, gladefile):
 		"""Class initializer: initialize internal data, create interface from Glade file, associate callbacks with graphical elements."""
+		self.cards_manager = 0
 		self.recent_project_files_number = 0
 		self.recent_project_files_path = []
 		self.filename = ""
