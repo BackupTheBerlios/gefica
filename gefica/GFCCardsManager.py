@@ -3,7 +3,7 @@
 
 import ConfigParser, os
 
-from gefica.GFCCard import GFCCard
+from GFCCard import GFCCard
 
 class GFCCardsManager:
 	"""Cards manager: store and manage data (cards, project data). Convert data into final format."""
