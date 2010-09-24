@@ -12,7 +12,7 @@ setup(	name='gefica',
 	packages=['gefica'],
 	data_files=[
 		('local/share/gefica/glade', ['gefica/glade/interface.glade', 'gefica/glade/interface.gladep']),
-		('local/share/gefica', ['doc/Template.svg']),
-		('local/share/doc/gefica', ['doc/Exemple-s.svg', 'doc/Exemple-s.pdf']),
+		('local/share/gefica/templates', ['data/Template.svg']),
+		('local/share/doc/gefica', ['doc/_build/latex/GeFiCa.pdf']),
 		]
 	)
