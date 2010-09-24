@@ -1,8 +1,31 @@
 ************* Module gefica.GFCInterfaceManager
-E:135:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
-R:146:GFCInterfaceManager.quit_cb: Method could be a function
+E: 97:GFCInterfaceManager.init_interface: Instance of 'int' has no 'get_nb_cards' member (but some types could not be inferred)
+E: 98:GFCInterfaceManager.init_interface: Instance of 'int' has no 'get_nb_cards' member (but some types could not be inferred)
+E: 99:GFCInterfaceManager.init_interface: Instance of 'int' has no 'get_nb_cards' member (but some types could not be inferred)
+E:100:GFCInterfaceManager.init_interface: Instance of 'int' has no 'get_card_character' member (but some types could not be inferred)
+E:101:GFCInterfaceManager.init_interface: Instance of 'int' has no 'get_nb_cards' member (but some types could not be inferred)
+E:108:GFCInterfaceManager.update_interface: Instance of 'int' has no 'get_card_character' member (but some types could not be inferred)
+E:109:GFCInterfaceManager.update_interface: Instance of 'int' has no 'get_card_character' member (but some types could not be inferred)
+E:110:GFCInterfaceManager.update_interface: Instance of 'int' has no 'get_card_pinyin' member (but some types could not be inferred)
+E:111:GFCInterfaceManager.update_interface: Instance of 'int' has no 'get_card_translation' member (but some types could not be inferred)
+E:112:GFCInterfaceManager.update_interface: Instance of 'int' has no 'get_card_example' member (but some types could not be inferred)
+E:113:GFCInterfaceManager.update_interface: Instance of 'int' has no 'get_card_example_translation' member (but some types could not be inferred)
+E:120:GFCInterfaceManager.new_project_cb: Instance of 'int' has no 'reset' member (but some types could not be inferred)
+E:128:GFCInterfaceManager.open_project_cb: Instance of 'int' has no 'read_cards_from_file' member (but some types could not be inferred)
+E:136:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has no 'saveas_project_cb' member
+E:137:GFCInterfaceManager.save_project_cb: Instance of 'int' has no 'write_cards_into_file' member (but some types could not be inferred)
+R:147:GFCInterfaceManager.quit_cb: Method could be a function
+E:171:GFCInterfaceManager.new_card_cb: Instance of 'int' has no 'add_card' member (but some types could not be inferred)
+E:172:GFCInterfaceManager.new_card_cb: Instance of 'int' has no 'get_card_character' member (but some types could not be inferred)
+E:212:GFCInterfaceManager.apply_card_modification_cb: Instance of 'int' has no 'set_card_character' member (but some types could not be inferred)
+E:213:GFCInterfaceManager.apply_card_modification_cb: Instance of 'int' has no 'set_card_pinyin' member (but some types could not be inferred)
+E:214:GFCInterfaceManager.apply_card_modification_cb: Instance of 'int' has no 'set_card_translation' member (but some types could not be inferred)
+E:215:GFCInterfaceManager.apply_card_modification_cb: Instance of 'int' has no 'set_card_example' member (but some types could not be inferred)
+E:216:GFCInterfaceManager.apply_card_modification_cb: Instance of 'int' has no 'set_card_example_translation' member (but some types could not be inferred)
+E:223:GFCInterfaceManager.generate_pdf_cb: Instance of 'int' has no 'generate_svg' member (but some types could not be inferred)
+E:224:GFCInterfaceManager.generate_pdf_cb: Instance of 'int' has no 'generate_pdf' member (but some types could not be inferred)
+E:243:GFCInterfaceManager.go_to_next_cb: Instance of 'int' has no 'get_nb_cards' member (but some types could not be inferred)
 R: 10:GFCInterfaceManager: Too many public methods (23/20)
-W: 71:GFCInterfaceManager.register_cards_manager: Attribute 'cards_manager' defined outside __init__
 ************* Module gefica.GFCCardsManager
 E:  6: No name 'GFCCard' in module 'gefica'
 R:  1: Similar lines in 2 files
@@ -31,7 +54,7 @@ if __name__ == '__main__':
 
 Report
 ======
-323 statements analysed.
+324 statements analysed.
 
 Duplication
 -----------
@@ -39,9 +62,9 @@ Duplication
 +-------------------------+------+---------+-----------+
 |                         |now   |previous |difference |
 +=========================+======+=========+===========+
-|nb duplicated lines      |19    |22       |-3.00      |
+|nb duplicated lines      |19    |19       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |3.704 |4.239    |-0.54      |
+|percent duplicated lines |3.696 |3.704    |-0.01      |
 +-------------------------+------+---------+-----------+
 
 
@@ -52,13 +75,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |322    |73.02 |328      |-6.00      |
+|code      |323    |73.08 |322      |+1.00      |
 +----------+-------+------+---------+-----------+
-|docstring |74     |16.78 |74       |=          |
+|docstring |74     |16.74 |74       |=          |
 +----------+-------+------+---------+-----------+
-|comment   |20     |4.54  |20       |=          |
+|comment   |20     |4.52  |20       |=          |
 +----------+-------+------+---------+-----------+
-|empty     |25     |5.67  |25       |=          |
+|empty     |25     |5.66  |25       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -103,9 +126,9 @@ Messages by category
 +-----------+-------+---------+-----------+
 |refactor   |3      |3        |=          |
 +-----------+-------+---------+-----------+
-|warning    |1      |9        |-8.00      |
+|warning    |0      |1        |-1.00      |
 +-----------+-------+---------+-----------+
-|error      |2      |1        |+1.00      |
+|error      |26     |2        |+24.00     |
 +-----------+-------+---------+-----------+
 
 
@@ -116,9 +139,9 @@ Messages by category
 +---------------------------+------+--------+---------+-----------+
 |module                     |error |warning |refactor |convention |
 +===========================+======+========+=========+===========+
-|gefica.GFCInterfaceManager |50.00 |100.00  |66.67    |0.00       |
+|gefica.GFCInterfaceManager |96.15 |0.00    |66.67    |0.00       |
 +---------------------------+------+--------+---------+-----------+
-|gefica.GFCCardsManager     |50.00 |0.00    |33.33    |0.00       |
+|gefica.GFCCardsManager     |3.85  |0.00    |33.33    |0.00       |
 +---------------------------+------+--------+---------+-----------+
 
 
@@ -129,7 +152,7 @@ Messages
 +-----------+------------+
 |message id |occurrences |
 +===========+============+
-|W0201      |1           |
+|E1103      |24          |
 +-----------+------------+
 |R0904      |1           |
 +-----------+------------+
@@ -146,5 +169,5 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 9.57/10 (previous run: 9.48/10)
+Your code has been rated at 5.90/10 (previous run: 9.57/10)
 
