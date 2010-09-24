@@ -3,7 +3,7 @@ E:136:GFCInterfaceManager.save_project_cb: Instance of 'GFCInterfaceManager' has
 R:147:GFCInterfaceManager.quit_cb: Method could be a function
 R: 10:GFCInterfaceManager: Too many public methods (23/20)
 ************* Module gefica.GFCCardsManager
-E:  6: No name 'GFCCard' in module 'gefica'
+W:  6: Relative import 'GFCCard', should be 'gefica.GFCCard'
 R:  1: Similar lines in 2 files
 ==gefica:4
 ==gefica:4
@@ -102,9 +102,9 @@ Messages by category
 +-----------+-------+---------+-----------+
 |refactor   |3      |3        |=          |
 +-----------+-------+---------+-----------+
-|warning    |0      |0        |=          |
+|warning    |1      |0        |+1.00      |
 +-----------+-------+---------+-----------+
-|error      |2      |26       |-24.00     |
+|error      |1      |2        |-1.00      |
 +-----------+-------+---------+-----------+
 
 
@@ -112,13 +112,13 @@ Messages by category
 % errors / warnings by module
 -----------------------------
 
-+---------------------------+------+--------+---------+-----------+
-|module                     |error |warning |refactor |convention |
-+===========================+======+========+=========+===========+
-|gefica.GFCInterfaceManager |50.00 |0.00    |66.67    |0.00       |
-+---------------------------+------+--------+---------+-----------+
-|gefica.GFCCardsManager     |50.00 |0.00    |33.33    |0.00       |
-+---------------------------+------+--------+---------+-----------+
++---------------------------+-------+--------+---------+-----------+
+|module                     |error  |warning |refactor |convention |
++===========================+=======+========+=========+===========+
+|gefica.GFCInterfaceManager |100.00 |0.00    |66.67    |0.00       |
++---------------------------+-------+--------+---------+-----------+
+|gefica.GFCCardsManager     |0.00   |100.00  |33.33    |0.00       |
++---------------------------+-------+--------+---------+-----------+
 
 
 
@@ -128,6 +128,8 @@ Messages
 +-----------+------------+
 |message id |occurrences |
 +===========+============+
+|W0403      |1           |
++-----------+------------+
 |R0904      |1           |
 +-----------+------------+
 |R0801      |1           |
@@ -136,12 +138,10 @@ Messages
 +-----------+------------+
 |E1101      |1           |
 +-----------+------------+
-|E0611      |1           |
-+-----------+------------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at 9.60/10 (previous run: 5.90/10)
+Your code has been rated at 9.72/10 (previous run: 9.60/10)
 

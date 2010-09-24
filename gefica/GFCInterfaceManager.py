@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """GFCInterfaceManager.py (©2005-2010 Romain Ballais <rballais@users.berlios.de> - See LICENSE file for licence information.)"""
 
-import gtk
 import gtk.glade
 import poppler
 
