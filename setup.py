@@ -11,8 +11,8 @@ setup(	name='gefica',
 	scripts=['gefica.py'],
 	packages=['gfc'],
 	data_files=[
-		('local/share/gefica/glade', ['gfc/glade/interface.glade', 'gfc/glade/interface.gladep']),
-		('local/share/gefica/templates', ['data/Template.svg']),
-		('local/share/doc/gefica', ['doc/_build/latex/GeFiCa.pdf']),
+		('share/gefica/glade', ['gfc/glade/interface.glade', 'gfc/glade/interface.gladep']),
+		('share/gefica/templates', ['data/Template.svg']),
+		('share/doc/gefica', ['doc/_build/latex/GeFiCa.pdf']),
 		]
 	)
