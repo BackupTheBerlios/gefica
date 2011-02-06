@@ -9,9 +9,9 @@ setup(	name='gefica',
 	author_email='rballais@users.berlios.de',
 	url='http://gefica.berlios.de',
 	scripts=['gefica.py'],
-	packages=['gefica'],
+	packages=['gfc'],
 	data_files=[
-		('local/share/gefica/glade', ['gefica/glade/interface.glade', 'gefica/glade/interface.gladep']),
+		('local/share/gefica/glade', ['gfc/glade/interface.glade', 'gfc/glade/interface.gladep']),
 		('local/share/gefica/templates', ['data/Template.svg']),
 		('local/share/doc/gefica', ['doc/_build/latex/GeFiCa.pdf']),
 		]

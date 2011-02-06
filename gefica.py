@@ -4,14 +4,14 @@
 
 import gtk
 
-import gefica.GFCCard
-import gefica.GFCCardsManager
-import gefica.GFCInterfaceManager
+import gfc.GFCCard
+import gfc.GFCCardsManager
+import gfc.GFCInterfaceManager
 
 def main():
 	"""Application start point. Initializes managers instances and lauch the event loop."""
-	interface_manager = gefica.GFCInterfaceManager.GFCInterfaceManager('gefica/glade/interface.glade')
-	cards_manager = gefica.GFCCardsManager.GFCCardsManager()
+	interface_manager = gfc.GFCInterfaceManager.GFCInterfaceManager('gefica/glade/interface.glade')
+	cards_manager = gfc.GFCCardsManager.GFCCardsManager()
 	interface_manager.register_cards_manager(cards_manager)
 	interface_manager.init_application()
 
